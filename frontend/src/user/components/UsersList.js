@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import UserItem from './UserItem';
 
-import './UserItem.css'
+import './UsersList.css'
 
 const UsersList = props => {
     if(props.users.length === 0){
