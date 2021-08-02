@@ -14,3 +14,8 @@
     color: white;
     background: #292929;
 }
+
+.user-item a:hover,
+.user-item a:active {
+  background: #ffd900;
+}
