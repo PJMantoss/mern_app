@@ -8,7 +8,7 @@ const UserItem = props => {
         <li className="user-item">
             <div className="user-item__content">
                 <div className="user-item__image">
-                    <Avatar image={props.image} alt={props.name} />
+                    <Avatar image={props.image} alt={props.alt} />
                 </div>
 
                 <div className="user-item__info">
