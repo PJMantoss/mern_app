@@ -35,4 +35,11 @@
     margin: 0 0 0.5rem 0;
     font-weight: normal;
     color: #ffd900;
-  }
+}
+
+.user-item:hover h2,
+.user-item:active h2,
+.user-item:hover h3,
+.user-item:active h3 {
+  color: #292929;
+}
