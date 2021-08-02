@@ -43,3 +43,7 @@
 .user-item:active h3 {
   color: #292929;
 }
+
+.user-item__info h3 {
+    margin: 0;
+}
