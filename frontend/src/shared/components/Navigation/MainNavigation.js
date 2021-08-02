@@ -11,6 +11,8 @@ const MainNavigation = props => {
                 <Span />
                 <Span />
             </button>
+            <h1 className="main-navigation__title">Places</h1>
+            <nav></nav>
         </MainHeader>
     )
 };
