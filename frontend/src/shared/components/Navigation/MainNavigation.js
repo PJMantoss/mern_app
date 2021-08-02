@@ -6,7 +6,7 @@ import './MainNavigation.css';
 const MainNavigation = props => {
     return(
         <MainHeader>
-            <button className="">
+            <button className="main-navigattion__menu-btn">
                 <Span />
                 <Span />
                 <Span />
