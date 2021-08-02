@@ -19,3 +19,7 @@
 .user-item a:active {
   background: #ffd900;
 }
+
+.user-item__content {
+    padding: 0;
+  }
