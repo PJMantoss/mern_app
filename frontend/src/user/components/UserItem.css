@@ -22,4 +22,10 @@
 
 .user-item__content {
     padding: 0;
-  }
+}
+
+.user-item__image {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1rem;
+}
