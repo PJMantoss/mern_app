@@ -1,9 +1,14 @@
 import React from 'react';
 import { NavLinks } from 'react-router-dom';
 
+import './NavLinks.css';
 
 const NavLinks = props => {
-    return();
+    return(
+        <ul>
+            <li></li>
+        </ul>
+    );
 }
 
 export default NavLinks;
