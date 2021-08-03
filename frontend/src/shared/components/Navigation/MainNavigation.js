@@ -10,7 +10,7 @@ const MainNavigation = props => {
     return(
         <React.Fragment>
             <SideDrawer>
-                <nav className="main-navigation_drawer-nav">
+                <nav className="main-navigation__drawer-nav">
                     <NavLinks />
                 </nav>
             </SideDrawer>
