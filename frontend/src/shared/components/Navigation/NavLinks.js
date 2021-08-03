@@ -9,6 +9,14 @@ const NavLinks = props => {
             <li>
                 <NavLink to="/" >ALL USERS</NavLink>
             </li>
+
+            <li>
+                <NavLink to="/" >MY PLACES</NavLink>
+            </li>
+
+            <li>
+                <NavLink to="/" >ADD PLACES</NavLink>
+            </li>
         </ul>
     );
 }
