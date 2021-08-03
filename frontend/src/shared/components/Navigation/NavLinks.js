@@ -1,12 +1,14 @@
 import React from 'react';
-import { NavLinks } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import './NavLinks.css';
 
 const NavLinks = props => {
     return(
-        <ul>
-            <li></li>
+        <ul className="nav-links">
+            <li>
+                <NavLink></NavLink>
+            </li>
         </ul>
     );
 }
