@@ -7,7 +7,7 @@ const NavLinks = props => {
     return(
         <ul className="nav-links">
             <li>
-                <NavLink></NavLink>
+                <NavLink to="/" >ALL USERS</NavLink>
             </li>
         </ul>
     );
