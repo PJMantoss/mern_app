@@ -4,7 +4,7 @@ import './SideDrawer.css'
 
 const SideDrawer = props => {
     return(
-        <aside>{props.children}</aside>
+        <aside className="side-drawer">{props.children}</aside>
     )
 }
 
