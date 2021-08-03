@@ -8,7 +8,7 @@ import './MainNavigation.css';
 
 const MainNavigation = props => {
     return(
-        <>
+        <React.Fragment>
             <SideDrawer>
                 <nav className="main-navigation_drawer-nav">
                     <NavLinks />
@@ -27,7 +27,7 @@ const MainNavigation = props => {
                     <NavLinks />
                 </nav>
             </MainHeader>
-        </>
+        </React.Fragment>
     )
 };
 
