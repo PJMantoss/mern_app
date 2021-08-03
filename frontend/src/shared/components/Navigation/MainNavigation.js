@@ -10,7 +10,7 @@ const MainNavigation = props => {
     return(
         <>
             <SideDrawer>
-                <nav>
+                <nav className="main-navigation_drawer-nav">
                     <NavLinks />
                 </nav>
             </SideDrawer>
