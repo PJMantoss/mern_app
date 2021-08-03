@@ -12,4 +12,11 @@
 
 .nav-links li {
     margin: 1rem;
-  }
+}
+
+.nav-links a {
+    border: 1px solid transparent;
+    color: #292929;
+    text-decoration: none;
+    padding: 0.5rem;
+}
