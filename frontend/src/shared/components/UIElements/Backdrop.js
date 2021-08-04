@@ -1,9 +1,10 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
-const Backdrop = () => {
+const Backdrop = props => {
     return ReactDOM.createPortal(
-        <div></div>, document.getElementById('backdrop-hook');
-    )
+        <div className="backdrop"></div>, document.getElementById('backdrop-hook');
+    );
 }
 
 export default Backdrop;
