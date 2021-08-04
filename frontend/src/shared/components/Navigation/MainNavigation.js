@@ -13,6 +13,10 @@ const MainNavigation = props => {
         setDrawerIsOpen(true);
     }
 
+    const closeDrawer = () => {
+        setDrawerIsOpen(false);
+    }
+
     return(
         <React.Fragment>
             {drawerIsOpen && (<SideDrawer>
