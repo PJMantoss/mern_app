@@ -11,11 +11,11 @@ const MainNavigation = props => {
 
     return(
         <React.Fragment>
-            {drawerIsOpen ? (<SideDrawer>
+            {drawerIsOpen && (<SideDrawer>
                 <nav className="main-navigation__drawer-nav">
                     <NavLinks />
                 </nav>
-            </SideDrawer>) : null}
+            </SideDrawer>)}
             <MainHeader>
                 <button className="main-navigation__menu-btn">
                     <span />
