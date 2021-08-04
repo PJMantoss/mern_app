@@ -21,7 +21,7 @@ const MainNavigation = props => {
                 </nav>
             </SideDrawer>)}
             <MainHeader>
-                <button className="main-navigation__menu-btn" onClick={openDrawer()}>
+                <button className="main-navigation__menu-btn" onClick={openDrawer}>
                     <span />
                     <span />
                     <span />
