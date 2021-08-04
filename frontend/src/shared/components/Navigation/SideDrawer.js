@@ -6,7 +6,7 @@ import './SideDrawer.css'
 
 const SideDrawer = props => {
     const content = (
-        <CSSTransition>
+        <CSSTransition in={props.show} timeout={200} classNames="slide-in-left" >
             <aside className="side-drawer">{props.children}</aside>
         </CSSTransition>
     );
