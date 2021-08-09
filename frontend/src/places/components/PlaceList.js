@@ -22,6 +22,8 @@ const PlaceList = props => {
                     key={place.id}
                     id={place.id}
                     title={place.title}
+                    description={place.description}
+                    address={place.address}
                 />
             ))}
         </ul>
