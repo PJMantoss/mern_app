@@ -20,8 +20,8 @@ const PlaceItem = props => {
 
                 <div className="place-item__actions">
                     <Button inverse>VIEW ON MAP</Button>
-                    <Button>EDIT</Button>
-                    <Button>DELETE</Button>
+                    <Button to={`places/${props.id}`}>EDIT</Button>
+                    <Button danger>DELETE</Button>
                 </div>
             </li>
         </Card>
