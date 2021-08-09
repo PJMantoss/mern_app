@@ -14,6 +14,10 @@ const PlaceItem = props => {
                 <h3>{props.address}</h3>
                 <p>{props.description}</p>
             </div>
+
+            <div className="place-item__actions">
+                <button></button>
+            </div>
         </li>
     )
 } 
