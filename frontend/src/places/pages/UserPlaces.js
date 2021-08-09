@@ -31,6 +31,7 @@ const DUMMY_PLACES = [
 ]
 
 const UserPlaces = () => {
+    const userId = useParams().userId;
     return(
         <PlaceList items={DUMMY_PLACES} />
     )
