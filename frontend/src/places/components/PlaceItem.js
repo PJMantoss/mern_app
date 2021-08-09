@@ -16,7 +16,9 @@ const PlaceItem = props => {
             </div>
 
             <div className="place-item__actions">
-                <button></button>
+                <button>VIEW ON MAP</button>
+                <button>EDIT</button>
+                <button>DELETE</button>
             </div>
         </li>
     )
