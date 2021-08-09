@@ -14,7 +14,15 @@ const PlaceList = props => {
         </div>);
     }
 
-    return 
+    return(
+        <ul className="place-list">
+            {props.items.map(place => (
+                key={place.id}
+                id={place.id}
+                title={place.title}
+            ))}
+        </ul>
+    )
 } 
 
 export default PlaceList;
