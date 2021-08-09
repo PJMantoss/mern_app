@@ -5,7 +5,12 @@ import './PlaceList.css';
 
 const PlaceList = props => {
     if(props.item.length === 0){
-        return <div className="place-list center"></div> 
+        return <div className="place-list center">
+            <Card>
+                <h2>No Places Found. Maybe Create One?</h2>
+                <button>Share Place</button>
+            </Card>
+        </div> 
     }
 } 
 
