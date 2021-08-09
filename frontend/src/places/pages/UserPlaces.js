@@ -31,7 +31,7 @@ const DUMMY_PLACES = [
 
 const UserPlaces = () => {
     return(
-        <PlaceList />
+        <PlaceList items={DUMMY_PLACES} />
     )
 } 
 
