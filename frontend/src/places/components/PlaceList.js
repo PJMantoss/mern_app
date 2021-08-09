@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../../shared/components/UIElements/Card';
+import PlaceItem from './PlaceItem';
 
 import './PlaceList.css';
 
@@ -17,9 +18,11 @@ const PlaceList = props => {
     return(
         <ul className="place-list">
             {props.items.map(place => (
-                key={place.id}
-                id={place.id}
-                title={place.title}
+                <PlaceItem 
+                    key={place.id}
+                    id={place.id}
+                    title={place.title}
+                />
             ))}
         </ul>
     )
