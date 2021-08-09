@@ -36,8 +36,8 @@ const Modal = props => {
                 mountOnEnter
                 unmountOnExit
             >
-            <aside className="side-drawer" onClick={props.onClick}>{props.children}</aside>
-        </CSSTransition>
+                <ModalOverlay {...props} />
+            </CSSTransition>
         </React.Fragment>
     )
 }
