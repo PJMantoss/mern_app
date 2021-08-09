@@ -6,6 +6,12 @@ import Modal from '../../shared/components/UIElements/Modal';
 import './PlaceItem.css';
 
 const PlaceItem = props => {
+    const [showMap, setShowMap] = useState(false);
+
+    const openMap = () => {};
+
+    const closeMap = () => {};
+
     return(
         <Card className="place-item__content">
             <li className="place-item">
