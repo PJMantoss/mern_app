@@ -29,6 +29,15 @@ const Modal = props => {
     return(
         <React.Fragment>
             {props.show && <Backdrop onClick={props.onCancel} />}
+            <CSSTransition 
+                in={props.show} 
+                timeout={200} 
+                classNames="modal"
+                mountOnEnter
+                unmountOnExit
+            >
+            <aside className="side-drawer" onClick={props.onClick}>{props.children}</aside>
+        </CSSTransition>
         </React.Fragment>
     )
 }
