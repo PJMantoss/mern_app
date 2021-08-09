@@ -1,4 +1,13 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
+import './Modal.css';
+
+const ModalOverlay = props => {
+    const content = (
+        <div className={`modal ${props.className}`}></div>
+    );
+}
 
 const Modal = props => {
     return
