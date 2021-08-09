@@ -15,11 +15,11 @@ const PlaceItem = props => {
     return(
         <React.Fragment>
             <Modal
-                show={}
-                onCancel={}
-                header={}
-                contentClass=""
-                footerClass=""
+                show={showMap}
+                onCancel={closeMap}
+                header={props.address}
+                contentClass="place-item__modal-content"
+                footerClass="place-item__modal-actions"
                 footer={}
             >
                 <div className="map-container"></div>
