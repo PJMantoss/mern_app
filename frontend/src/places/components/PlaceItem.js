@@ -20,12 +20,14 @@ const PlaceItem = props => {
                 header={props.address}
                 contentClass="place-item__modal-content"
                 footerClass="place-item__modal-actions"
-                footer={}
+                footer={<Button onClick={closeMap}>CLOSE</Button>}
             >
-                <div className="map-container"></div>
+                <div className="map-container">
+                    <h2>THE MAP!</h2>
+                </div>
             </Modal>
-            <Card className="place-item__content">
-                <li className="place-item">
+            <li className="place-item">
+                <Card className="place-item__content">
                     <div className="place-item__image">
                         <img src={props.image} alt={props.title} />
                     </div>
@@ -37,12 +39,12 @@ const PlaceItem = props => {
                     </div>
 
                     <div className="place-item__actions">
-                        <Button inverse>VIEW ON MAP</Button>
+                        <Button inverse onClick={openMap}>VIEW ON MAP</Button>
                         <Button to={`places/${props.id}`}>EDIT</Button>
                         <Button danger>DELETE</Button>
                     </div>
-                </li>
-            </Card>
+                </Card>
+            </li>
         </React.Fragment>
     )
 } 

@@ -43,9 +43,9 @@
     text-align: right;
 }
   
-  .place-item__actions button,
-  .place-item__actions a {
-    margin: 0.5rem;
+.place-item__actions button,
+.place-item__actions a {
+  margin: 0.5rem;
 }
 
 .map-container{
