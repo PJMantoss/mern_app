@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 const Map = props => {
+    const mapRef = useRef();
+
     const map = window.google.maps.Map();
+
     return(
-        <div className={`map ${props.className}`} style={props.style}></div>
+        <div ref={mapRef} className={`map ${props.className}`} style={props.style}></div>
     )
 };
 
