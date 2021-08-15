@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Map = props => {
+    const map = window.google.maps.Map();
     return(
         <div className={`map ${props.className}`} style={props.style}></div>
     )
