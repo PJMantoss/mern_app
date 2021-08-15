@@ -7,3 +7,4 @@ const Map = props => {
 };
 
 export default Map;
+//API key- AIzaSyAs1ttmZ1WP1iJbtpwFoPHEYvhBXN7K7mA
