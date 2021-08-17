@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Card from '../../shared/components/UIElements/Card';
 import Button from '../../shared/components/FormElements/Button';
 import Modal from '../../shared/components/UIElements/Modal';
-import Map from '../../shared/components/UIElements/Map';
+// import Map from '../../shared/components/UIElements/Map';
 
 import './PlaceItem.css';
 
@@ -24,7 +24,8 @@ const PlaceItem = props => {
                 footer={<Button onClick={closeMap}>CLOSE</Button>}
             >
                 <div className="map-container">
-                    <Map center={props.coordinates} zoom={16} />
+                    {/* <Map center={props.coordinates} zoom={16} /> */}
+                    <iframe title="map" width="100%" height="100%" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={'https://maps.google.com/maps?q=' + props.coordinates.lat.toString() + ',' + props.coordinates.lng.toString() + '&t=&z=15&ie=UTF8&iwloc=&output=embed'}></iframe>
                 </div>
             </Modal>
             <li className="place-item">
