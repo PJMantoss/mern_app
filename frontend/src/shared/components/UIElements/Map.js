@@ -21,7 +21,8 @@ const Map = props => {
             ref={mapRef} 
             className={`map ${props.className}`} 
             style={props.style}
-        ></div>
+        >
+        </div>
     )
 };
 
