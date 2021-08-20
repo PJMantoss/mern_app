@@ -3,7 +3,12 @@ import React, { useReducer } from "react";
 import './Input.css';
 
 const inputReducer = (state, action) => {
-    switch();
+    switch(action.type){
+        case 'CHANGE':
+            return {};
+        default:
+            return state;
+    }
 }
 
 const Input = props => {
