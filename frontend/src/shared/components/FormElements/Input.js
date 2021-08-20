@@ -2,9 +2,15 @@ import React, { useReducer } from "react";
 
 import './Input.css';
 
+const inputReducer = (state, action) => {
+    switch();
+}
+
 const Input = props => {
+    useReducer(inputReducer);
 
     const changeHandler = () => {}
+
     const element = props.element === 'input' ? (
         <input 
             id={props.id} 
