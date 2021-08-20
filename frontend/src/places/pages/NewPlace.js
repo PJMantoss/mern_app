@@ -5,7 +5,7 @@ import './NewPlace.css'
 
 const NewPlace = () => {
     return <form className="place-form">
-        <input type="text" label="Title" />
+        <Input />
     </form>
 }
 
