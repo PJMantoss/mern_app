@@ -10,6 +10,7 @@ const Input = props => {
     return(
         <div className={`form-control`}>
             <label htmlFor={props.id}>{props.label}</label>
+            {element}
         </div>
     )
 }
