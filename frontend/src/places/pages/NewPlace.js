@@ -1,7 +1,9 @@
 import React from 'react';
 
 const NewPlace = () => {
-    return <h2>New Place Works</h2>
+    return <form>
+        <input type="text" name="submit" />
+    </form>
 }
 
 export default NewPlace;
