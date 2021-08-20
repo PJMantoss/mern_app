@@ -1,8 +1,8 @@
 import React from 'react';
 
 const NewPlace = () => {
-    return <form>
-        <input type="text" name="submit" />
+    return <form className="place-form">
+        <input type="text" label="Title" />
     </form>
 }
 
