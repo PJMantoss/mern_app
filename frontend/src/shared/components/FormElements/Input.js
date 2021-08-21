@@ -30,12 +30,14 @@ const Input = props => {
             onChange={changeHandler}
             value={inputState.value}
         />
-        ) : (<textarea 
+        ) : (
+            <textarea 
                 id={props.id} 
                 rows={props.rows || 3} 
                 onChange={changeHandler}
                 value={inputState.value}
-            />);
+            />
+            );
 
     return(
         <div className={`form-control ${!inputState.isValid && "form-control--invalid"}`}>
