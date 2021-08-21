@@ -28,8 +28,14 @@ const Input = props => {
             type={props.type} 
             placeholder={props.placeholder} 
             onChange={changeHandler}
+            value={inputState.value}
         />
-        ) : (<textarea id={props.id} rows={props.rows || 3} onChange={changeHandler}/>);
+        ) : (<textarea 
+                id={props.id} 
+                rows={props.rows || 3} 
+                onChange={changeHandler}
+                value={inputState.value}
+            />);
 
     return(
         <div className={`form-control`}>
