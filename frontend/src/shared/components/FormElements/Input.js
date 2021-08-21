@@ -18,8 +18,8 @@ const inputReducer = (state, action) => {
 const Input = props => {
     const [inputState, dispatch] = useReducer(inputReducer, {value: "", isValid: false});
 
-    const changeHandler = () => {
-        dispatch({ type: "CHANGE" });
+    const changeHandler = e => {
+        dispatch({ type: "CHANGE", val: e.target.value });
     }
 
     const element = props.element === 'input' ? (
