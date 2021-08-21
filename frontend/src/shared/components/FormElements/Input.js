@@ -5,14 +5,18 @@ import './Input.css';
 const inputReducer = (state, action) => {
     switch(action.type){
         case 'CHANGE':
-            return {};
+            return {
+                ...state,
+                value: action.val,
+                isValid: true
+            };
         default:
             return state;
     }
 }
 
 const Input = props => {
-    useReducer(inputReducer);
+    useReducer(inputReducer, {value: "", isValid: false});
 
     const changeHandler = () => {}
 
