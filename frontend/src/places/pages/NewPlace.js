@@ -29,10 +29,9 @@ const formReducer = (state, action) => {
 }
 
 const NewPlace = () => {
-    useReducer(formReducer);
-    const titleInputHandler = useCallback((id, value, isValid) => {}, []);
+    const [] = useReducer(formReducer);
 
-    const descriptionInputHandler = useCallback((id, value, isValid) => {}, []);
+    const inputHandler = useCallback((id, value, isValid) => {}, []);
 
     return <form className="place-form">
         <Input 
@@ -42,7 +41,7 @@ const NewPlace = () => {
             label="Title" 
             validators={[VALIDATOR_REQUIRE()]}
             errorText="Please enter a valid title."
-            onInput={titleInputHandler}
+            onInput={inputHandler}
         />
         <Input 
             id="description"
@@ -50,7 +49,7 @@ const NewPlace = () => {
             label="description" 
             validators={[VALIDATOR_MINLENGTH(5)]}
             errorText="Please enter a valid description (at least 5 characters)."
-            onInput={descriptionInputHandler}
+            onInput={inputHandler}
         />
     </form>
 }
