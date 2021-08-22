@@ -33,6 +33,7 @@ const Input = props => {
             type={props.type} 
             placeholder={props.placeholder} 
             onChange={changeHandler}
+            onBlur={}
             value={inputState.value}
         />
         ) : (
@@ -40,6 +41,7 @@ const Input = props => {
                 id={props.id} 
                 rows={props.rows || 3} 
                 onChange={changeHandler}
+                onBlur={}
                 value={inputState.value}
             />
             );
