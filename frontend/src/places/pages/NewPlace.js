@@ -5,7 +5,9 @@ import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../shared/util/valida
 import './NewPlace.css'
 
 const NewPlace = () => {
-    const titleInputHandler = useCallback((id, value, isValid) => {})
+    const titleInputHandler = useCallback((id, value, isValid) => {}, []);
+
+    const descriptionInputHandler = useCallback((id, value, isValid) => {}, []);
 
     return <form className="place-form">
         <Input 
@@ -23,7 +25,7 @@ const NewPlace = () => {
             label="description" 
             validators={[VALIDATOR_MINLENGTH(5)]}
             errorText="Please enter a valid description (at least 5 characters)."
-            onInput={titleInputHandler}
+            onInput={descriptionInputHandler}
         />
     </form>
 }
