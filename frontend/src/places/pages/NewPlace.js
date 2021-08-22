@@ -29,7 +29,13 @@ const formReducer = (state, action) => {
 }
 
 const NewPlace = () => {
-    const [] = useReducer(formReducer);
+    const [formState, dispatch] = useReducer(formReducer, {
+        inputs: {
+            title: {},
+            description: {}
+        },
+        isValid: false
+    });
 
     const inputHandler = useCallback((id, value, isValid) => {
         dispatch({
