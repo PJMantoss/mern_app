@@ -53,6 +53,10 @@ const NewPlace = () => {
         });
     }, []);
 
+    const placeSubmitHandler = e => {
+        e.preventDefault();
+    }
+
     return <form className="place-form">
         <Input 
             id="title"
