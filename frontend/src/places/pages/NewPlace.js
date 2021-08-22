@@ -51,11 +51,11 @@ const NewPlace = () => {
             isValid: isValid,
             inputId: id
         });
-    }, []);
+    }, [dispatch]);
 
     const placeSubmitHandler = e => {
         e.preventDefault();
-        console.log(formState.inputs);
+        console.log(formState.inputs); //Send these info to the backend
     }
 
     return <form className="place-form" onSubmit={placeSubmitHandler}>
