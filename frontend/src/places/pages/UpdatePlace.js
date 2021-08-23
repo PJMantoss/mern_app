@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Input from '../../shared/components/FormElements/Input';
-import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../shared/util/validators';
 import Button from '../../shared/components/FormElements/Button';
+import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../shared/util/validators';
 
 const DUMMY_PLACES = [
     {
@@ -30,7 +30,7 @@ const DUMMY_PLACES = [
         },
         creator: 'u2'
     }
-]
+];
 
 const UpdatePlace = () => {
     const placeId = useParams().placeId;
