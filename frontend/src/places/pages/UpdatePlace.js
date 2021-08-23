@@ -53,7 +53,9 @@ const UpdatePlace = () => {
                 label="Title" 
                 validators={[VALIDATOR_REQUIRE()]}
                 errorText="Please enter a valid title."
-                onInput={inputHandler}
+                onInput={}
+                value={identifiedPlace.title}
+                valid={}
             />
             <Input 
                 id="description"
@@ -61,7 +63,9 @@ const UpdatePlace = () => {
                 label="Description" 
                 validators={[VALIDATOR_MINLENGTH(5)]}
                 errorText="Please enter a valid description (at least 5 characters)."
-                onInput={inputHandler}
+                onInput={}
+                value={identifiedPlace.description}
+                valid={}
             />
         </form>
     );
