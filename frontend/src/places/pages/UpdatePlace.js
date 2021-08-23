@@ -32,7 +32,16 @@ const DUMMY_PLACES = [
 const UpdatePlace = () => {
     const placeId = useParams().placeId;
 
-    const identifiedPlace = DUMMY_PLACES.find(p => p.id === id)
+    const identifiedPlace = DUMMY_PLACES.find(p => p.id === placeId)
+
+    if(!identifiedPlace){
+        return(
+            <div className="center">
+                <h2>Could not find place!</h2>
+            </div>
+        )
+    }
+
     return(<h2>Update Place</h2>)
 };
 
