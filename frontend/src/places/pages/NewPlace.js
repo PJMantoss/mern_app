@@ -17,8 +17,13 @@ const NewPlace = () => {
             description: {
                 value: "",
                 isValid: false
+            },
+            address: {
+                value: "",
+                isValid: false
             }
-        }
+        },
+        false
     )
 
     const inputHandler = useCallback((id, value, isValid) => {
