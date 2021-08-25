@@ -41,15 +41,15 @@ const UpdatePlace = () => {
     const [formState, inputHandler] = useForm(
         {
             title: {
-                value: "",
+                value: identifiedPlace.title,
                 isValid: true
             },
             description: {
-                value: "",
+                value: identifiedPlace.description,
                 isValid: true
             },
             address: {
-                value: "",
+                value: identifiedPlace.address,
                 isValid: true
             }
         },
@@ -84,8 +84,8 @@ const UpdatePlace = () => {
                 validators={[VALIDATOR_MINLENGTH(5)]}
                 errorText="Please enter a valid description (at least 5 characters)."
                 onInput={() => {}}
-                initialValue={identifiedPlace.description}
-                initialValid={true}
+                initialValue={formState.inputs.description.value}
+                initialValid={formState.inputs.description.isValid}
             />
             <Button type="submit" disabled={true}>
                 UPDATE PLACE
