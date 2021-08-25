@@ -8,7 +8,7 @@ import './NewPlace.css'
 
 const NewPlace = () => {
 
-    useForm(
+    const [formState, inputHandler] = useForm(
         {
             title: {
                 value: "",
