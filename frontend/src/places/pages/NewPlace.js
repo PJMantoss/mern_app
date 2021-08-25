@@ -6,19 +6,6 @@ import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../shared/util/valida
 import './NewPlace.css'
 
 const NewPlace = () => {
-    const [formState, dispatch] = useReducer(formReducer, {
-        inputs: {
-            title: {
-                value: "",
-                isValid: false
-            },
-            description: {
-                value: "",
-                isValid: false
-            }
-        },
-        isValid: false
-    });
 
     const inputHandler = useCallback((id, value, isValid) => {
         dispatch({

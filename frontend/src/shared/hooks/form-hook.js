@@ -24,4 +24,9 @@ const formReducer = (state, action) => {
     }
 }
 
-export const useForm = () => {};
+export const useForm = (initialInputs, initialValidity) => {
+    const [formState, dispatch] = useReducer(formReducer, {
+        inputs: initialInputs,
+        isValid: initialValidity
+    });
+};
