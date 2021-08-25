@@ -47,10 +47,6 @@ const UpdatePlace = () => {
             description: {
                 value: identifiedPlace.description,
                 isValid: true
-            },
-            address: {
-                value: identifiedPlace.address,
-                isValid: true
             }
         },
         false
