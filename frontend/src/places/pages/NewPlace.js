@@ -26,15 +26,6 @@ const NewPlace = () => {
         false
     )
 
-    const inputHandler = useCallback((id, value, isValid) => {
-        dispatch({
-            type: 'INPUT_CHANGE',
-            value: value,
-            isValid: isValid,
-            inputId: id
-        });
-    }, [dispatch]);
-
     const placeSubmitHandler = e => {
         e.preventDefault();
         console.log(formState.inputs); //Send these info to the backend
