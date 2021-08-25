@@ -5,6 +5,8 @@ import Button from '../../shared/components/FormElements/Button';
 import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../shared/util/validators';
 import { useForm } from '../../shared/hooks/form-hook';
 
+import './PlaceForm.css'
+
 const DUMMY_PLACES = [
     {
         id: 'p1',
