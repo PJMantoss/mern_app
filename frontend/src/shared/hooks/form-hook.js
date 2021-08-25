@@ -38,4 +38,6 @@ export const useForm = (initialInputs, initialValidity) => {
             inputId: id
         });
     }, [dispatch]);
+
+    return [formState, inputHandler]
 };
