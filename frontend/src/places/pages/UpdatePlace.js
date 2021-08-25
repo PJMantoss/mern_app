@@ -50,7 +50,12 @@ const UpdatePlace = () => {
             }
         },
         false
-    )
+    );
+
+    const placeUpdateSubmitHandler = e => {
+        e.preventDefault();
+        console.log(formState.inputs); //Send these info to the backend
+    }
 
     if(!identifiedPlace){
         return(
@@ -61,7 +66,7 @@ const UpdatePlace = () => {
     }
 
     return(
-        <form>
+        <form className="form-place" onSubmit={placeUpdateSubmitHandler}>
             <Input 
                 id="title"
                 element="input" 
