@@ -68,7 +68,7 @@ const UpdatePlace = () => {
     }
 
     return(
-        <form className="form-place" onSubmit={placeUpdateSubmitHandler}>
+        <form className="place-form" onSubmit={placeUpdateSubmitHandler}>
             <Input 
                 id="title"
                 element="input" 
@@ -76,7 +76,7 @@ const UpdatePlace = () => {
                 label="Title" 
                 validators={[VALIDATOR_REQUIRE()]}
                 errorText="Please enter a valid title."
-                onInput={() => {}}
+                onInput={inputHandler}
                 initialValue={formState.inputs.title.value}
                 initialValid={formState.inputs.title.isValid}
             />
@@ -86,7 +86,7 @@ const UpdatePlace = () => {
                 label="Description" 
                 validators={[VALIDATOR_MINLENGTH(5)]}
                 errorText="Please enter a valid description (at least 5 characters)."
-                onInput={() => {}}
+                onInput={inputHandler}
                 initialValue={formState.inputs.description.value}
                 initialValid={formState.inputs.description.isValid}
             />
