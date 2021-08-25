@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Input from '../../shared/components/FormElements/Input';
 import Button from '../../shared/components/FormElements/Button';
 import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../shared/util/validators';
+import { useForm } from '../../shared/hooks/form-hook';
 
 const DUMMY_PLACES = [
     {
@@ -36,6 +37,24 @@ const UpdatePlace = () => {
     const placeId = useParams().placeId;
 
     const identifiedPlace = DUMMY_PLACES.find(p => p.id === placeId)
+
+    const [formState, inputHandler] = useForm(
+        {
+            title: {
+                value: "",
+                isValid: true
+            },
+            description: {
+                value: "",
+                isValid: true
+            },
+            address: {
+                value: "",
+                isValid: true
+            }
+        },
+        false
+    )
 
     if(!identifiedPlace){
         return(
