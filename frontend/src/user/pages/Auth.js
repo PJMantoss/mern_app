@@ -2,9 +2,9 @@ import React from 'react';
 
 function Auth(props) {
     return (
-        <div>
+        <form>
             
-        </div>
+        </form>
     );
 }
 
