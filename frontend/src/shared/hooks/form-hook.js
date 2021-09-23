@@ -42,7 +42,7 @@ export const useForm = (initialInputs, initialValidity) => {
             isValid: isValid,
             inputId: id
         });
-    }, [dispatch]);
+    }, []);
 
     const setFormData = useCallback((inputData, formValidity) => {
         dispatch({
