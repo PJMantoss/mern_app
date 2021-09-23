@@ -74,10 +74,10 @@ const UpdatePlace = () => {
         console.log(formState.inputs); //Send these info to the backend
     }
 
-    if(!identifiedPlace){
+    if(!isLoading){
         return(
             <div className="center">
-                <h2>Could not find place!</h2>
+                <h2>Loadng...</h2>
             </div>
         )
     }
