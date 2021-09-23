@@ -4,6 +4,25 @@ import { VALIDATOR_REQUIRE, VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from '../../s
 import { useForm } from '../../shared/hooks/form-hook'; 
 
 function Auth(props) {
+
+    const [formState, inputHandler] = useForm(
+        {
+            name: {
+                value: "",
+                isValid: false
+            },
+            email: {
+                value: "",
+                isValid: false
+            },
+            password: {
+                value: "",
+                isValid: false
+            }
+        },
+        false
+    )
+
     return (
         <form>
             <Input 
