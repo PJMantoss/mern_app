@@ -29,7 +29,7 @@ function Auth(props) {
     }
 
     return (
-        <form>
+        <form onSubmit={signupSubmitHandler}>
             <Input 
                 id="name"
                 element="input" 
