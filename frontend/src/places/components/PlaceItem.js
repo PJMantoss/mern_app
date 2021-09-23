@@ -42,6 +42,7 @@ const PlaceItem = props => {
             </Modal>
             <Modal 
                 show={showDeleteModal}
+                onCancel={cancelDeleteHandler}
                 header="Are you sure?" 
                 footerClass="place-item__modal-actions" 
                 footer={
