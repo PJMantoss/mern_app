@@ -22,6 +22,10 @@ const PlaceItem = props => {
         setShowDeleteModal(false);
     };
 
+    const confirmDeleteHandler = () => {
+        console.log("DELETE...");
+    };
+
     return(
         <React.Fragment>
             <Modal
@@ -36,12 +40,16 @@ const PlaceItem = props => {
                     <Map center={props.coordinates} zoom={16} />
                 </div>
             </Modal>
-            <Modal header="Are you sure?" footerClass="place-item__modal-actions" footer={
-                <React.Fragment>
-                    <Button inverse>CANCEL</Button>
-                    <Button danger>DELETE</Button>
-                </React.Fragment>
-            }>
+            <Modal 
+                header="Are you sure?" 
+                footerClass="place-item__modal-actions" 
+                footer={
+                    <React.Fragment>
+                        <Button inverse>CANCEL</Button>
+                        <Button danger>DELETE</Button>
+                    </React.Fragment>
+                }
+            >
                 <p>
                     This action cannot be undone.
                 </p>
