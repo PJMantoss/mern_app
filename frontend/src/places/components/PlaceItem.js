@@ -8,6 +8,7 @@ import './PlaceItem.css';
 
 const PlaceItem = props => {
     const [showMap, setShowMap] = useState(false);
+    const [showDelModal, setShowDelModal] = useState(false);
 
     const openMap = () => setShowMap(true);
 
@@ -29,8 +30,8 @@ const PlaceItem = props => {
             </Modal>
             <Modal header="Are you sure?" footerClass="place-item__modal-actions" footer={
                 <React.Fragment>
-                    <Button>CANCEL</Button>
-                    <Button>DELETE</Button>
+                    <Button inverse>CANCEL</Button>
+                    <Button danger>DELETE</Button>
                 </React.Fragment>
             }>
                 <p>
