@@ -47,7 +47,7 @@ function Auth(props) {
                 type="email" 
                 label="E-Mail" 
                 validators={[VALIDATOR_EMAIL()]}
-                errorText="Please enter your e-mail."
+                errorText="Please enter a valid e-mail."
                 onInput={inputHandler}
             />
 
