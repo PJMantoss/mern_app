@@ -29,7 +29,7 @@ function App() {
           <UpdatePlace />
         </Route>
 
-        <Route path="/places/:placeId">
+        <Route path="/auth">
           <Auth />
         </Route>
 
