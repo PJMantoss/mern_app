@@ -3,6 +3,7 @@ import Input from '../../shared/components/FormElements/Input';
 import { VALIDATOR_REQUIRE, VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from '../../shared/util/validators';
 import { useForm } from '../../shared/hooks/form-hook'; 
 import Button from '../../shared/components/FormElements/Button';
+import Card from '../../shared/components/UIElements/Card';
 
 import './Auth.css'
 
@@ -32,6 +33,7 @@ function Auth(props) {
     }
 
     return (
+        <Card>
         <form className="place-form" onSubmit={signupSubmitHandler}>
             <Input 
                 id="name"
@@ -67,6 +69,7 @@ function Auth(props) {
                 SIGN UP
             </Button>
         </form>
+        </Card>
     );
 }
 
