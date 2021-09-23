@@ -54,6 +54,8 @@ const UpdatePlace = () => {
 
     const identifiedPlace = DUMMY_PLACES.find(p => p.id === placeId)
 
+    setFormData({}, true);
+
     const placeUpdateSubmitHandler = e => {
         e.preventDefault();
         console.log(formState.inputs); //Send these info to the backend
