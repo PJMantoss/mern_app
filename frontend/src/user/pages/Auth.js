@@ -23,6 +23,11 @@ function Auth(props) {
         false
     )
 
+    const signupSubmitHandler = e => {
+        e.preventDefault();
+        console.log(formState.inputs); //Send these info to the backend
+    }
+
     return (
         <form>
             <Input 
@@ -32,6 +37,16 @@ function Auth(props) {
                 label="Name" 
                 validators={[VALIDATOR_REQUIRE()]}
                 errorText="Please enter your name."
+                onInput={inputHandler}
+            />
+
+            <Input 
+                id="email"
+                element="input" 
+                type="email" 
+                label="E-Mail" 
+                validators={[VALIDATOR_EMAIL()]}
+                errorText="Please enter your e-mail."
                 onInput={inputHandler}
             />
         </form>
