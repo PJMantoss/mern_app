@@ -33,8 +33,10 @@ function Auth(props) {
     }
 
     return (
-        <Card>
-            <form className="place-form" onSubmit={signupSubmitHandler}>
+        <Card className="authentication">
+            <h2>Login Required</h2>
+            <hr />
+            <form onSubmit={signupSubmitHandler}>
                 <Input 
                     id="name"
                     element="input" 
