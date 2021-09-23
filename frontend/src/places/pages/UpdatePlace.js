@@ -54,7 +54,7 @@ const UpdatePlace = () => {
 
     const identifiedPlace = DUMMY_PLACES.find(p => p.id === placeId)
 
-    setFormData({}, true);
+    useEffect(() => {}, [])
 
     const placeUpdateSubmitHandler = e => {
         e.preventDefault();
