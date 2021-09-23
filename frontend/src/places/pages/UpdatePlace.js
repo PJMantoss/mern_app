@@ -77,7 +77,7 @@ const UpdatePlace = () => {
     if(!isLoading){
         return(
             <div className="center">
-                <h2>Loadng...</h2>
+                <h2>Loading...</h2>
             </div>
         )
     }
