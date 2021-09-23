@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from '../../shared/components/FormElements/Input';
+import { VALIDATOR_REQUIRE, VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from '../../shared/util/validators'; 
 
 function Auth(props) {
     return (
