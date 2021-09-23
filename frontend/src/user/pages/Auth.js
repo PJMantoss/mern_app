@@ -50,6 +50,16 @@ function Auth(props) {
                 onInput={inputHandler}
             />
 
+            <Input 
+                id="password"
+                element="input" 
+                type="password" 
+                label="E-Mail" 
+                validators={[VALIDATOR_EMAIL()]}
+                errorText="Please enter your password."
+                onInput={inputHandler}
+            />
+
             <Button type="submit" disabled={!formState.isValid}>
                 SIGN UP
             </Button>
