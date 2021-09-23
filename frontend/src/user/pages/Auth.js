@@ -34,41 +34,41 @@ function Auth(props) {
 
     return (
         <Card>
-        <form className="place-form" onSubmit={signupSubmitHandler}>
-            <Input 
-                id="name"
-                element="input" 
-                type="text" 
-                label="Name" 
-                validators={[VALIDATOR_REQUIRE()]}
-                errorText="Please enter your name."
-                onInput={inputHandler}
-            />
+            <form className="place-form" onSubmit={signupSubmitHandler}>
+                <Input 
+                    id="name"
+                    element="input" 
+                    type="text" 
+                    label="Name" 
+                    validators={[VALIDATOR_REQUIRE()]}
+                    errorText="Please enter your name."
+                    onInput={inputHandler}
+                />
 
-            <Input 
-                id="email"
-                element="input" 
-                type="email" 
-                label="E-Mail" 
-                validators={[VALIDATOR_EMAIL()]}
-                errorText="Please enter a valid e-mail."
-                onInput={inputHandler}
-            />
+                <Input 
+                    id="email"
+                    element="input" 
+                    type="email" 
+                    label="E-Mail" 
+                    validators={[VALIDATOR_EMAIL()]}
+                    errorText="Please enter a valid e-mail."
+                    onInput={inputHandler}
+                />
 
-            <Input 
-                id="password"
-                element="input" 
-                type="password" 
-                label="Password" 
-                validators={[VALIDATOR_MINLENGTH(6)]}
-                errorText="Password should be at least 6 characters long."
-                onInput={inputHandler}
-            />
+                <Input 
+                    id="password"
+                    element="input" 
+                    type="password" 
+                    label="Password" 
+                    validators={[VALIDATOR_MINLENGTH(6)]}
+                    errorText="Password should be at least 6 characters long."
+                    onInput={inputHandler}
+                />
 
-            <Button type="submit" disabled={!formState.isValid}>
-                SIGN UP
-            </Button>
-        </form>
+                <Button type="submit" disabled={!formState.isValid}>
+                    SIGN UP
+                </Button>
+            </form>
         </Card>
     );
 }
