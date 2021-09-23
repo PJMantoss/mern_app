@@ -4,6 +4,8 @@ import { VALIDATOR_REQUIRE, VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from '../../s
 import { useForm } from '../../shared/hooks/form-hook'; 
 import Button from '../../shared/components/FormElements/Button';
 
+import './Auth.css'
+
 function Auth(props) {
 
     const [formState, inputHandler] = useForm(
