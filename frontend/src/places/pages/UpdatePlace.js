@@ -65,7 +65,7 @@ const UpdatePlace = () => {
                 isValid: true
             }
         }, true);
-    }, [])
+    }, [setFormData, identifiedPlace])
 
     const placeUpdateSubmitHandler = e => {
         e.preventDefault();
