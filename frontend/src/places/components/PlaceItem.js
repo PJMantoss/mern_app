@@ -14,6 +14,8 @@ const PlaceItem = props => {
 
     const closeMap = () => setShowMap(false);
 
+    const showDeleteWarningHandler = () => {};
+
     return(
         <React.Fragment>
             <Modal
