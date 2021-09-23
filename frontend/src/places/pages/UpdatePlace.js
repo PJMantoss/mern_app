@@ -82,7 +82,7 @@ const UpdatePlace = () => {
         return(
             <div className="center">
                 <Card>
-                    <h2>Loading...</h2>
+                    <h2>Could Not Find Place.</h2>
                 </Card>
             </div>
         )
