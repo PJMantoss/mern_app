@@ -11,7 +11,7 @@ const PlaceList = props => {
         <div className="place-list center">
             <Card>
                 <h2>No Places Found. Maybe Create One?</h2>
-                <button>Share Place</button>
+                <Button to="/places">Share Place</Button to="/places">
             </Card>
         </div>);
     }
