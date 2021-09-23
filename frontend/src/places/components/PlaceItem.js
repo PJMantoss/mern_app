@@ -8,7 +8,7 @@ import './PlaceItem.css';
 
 const PlaceItem = props => {
     const [showMap, setShowMap] = useState(false);
-    const [showDelModal, setShowDelModal] = useState(false);
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     const openMap = () => setShowMap(true);
 
