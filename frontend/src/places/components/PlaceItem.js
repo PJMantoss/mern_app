@@ -27,7 +27,11 @@ const PlaceItem = props => {
                     <Map center={props.coordinates} zoom={16} />
                 </div>
             </Modal>
-            <Modal header="Are you sure?" footerClass="place-item__modal-actions">
+            <Modal header="Are you sure?" footerClass="place-item__modal-actions" footer={
+                <React.Fragment>
+                    
+                </React.Fragment>
+            }>
                 <p>
                     This action cannot be undone.
                 </p>
