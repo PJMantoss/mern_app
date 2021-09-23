@@ -27,9 +27,9 @@ const PlaceItem = props => {
                     <Map center={props.coordinates} zoom={16} />
                 </div>
             </Modal>
-            <Modal>
+            <Modal header="Are you sure?" footerClass="place-item__modal-actions">
                 <p>
-                    Are you sure? This action cannot be undone.
+                    This action cannot be undone.
                 </p>
             </Modal>
             <li className="place-item">
