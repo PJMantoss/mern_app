@@ -1,6 +1,6 @@
 import React from 'react';
 import Input from '../../shared/components/FormElements/Input';
-import { VALIDATOR_REQUIRE, VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from '../../shared/util/validators';
+import { VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from '../../shared/util/validators';
 import { useForm } from '../../shared/hooks/form-hook'; 
 import Button from '../../shared/components/FormElements/Button';
 import Card from '../../shared/components/UIElements/Card';
@@ -11,10 +11,6 @@ function Auth(props) {
 
     const [formState, inputHandler] = useForm(
         {
-            name: {
-                value: "",
-                isValid: false
-            },
             email: {
                 value: "",
                 isValid: false
@@ -38,16 +34,6 @@ function Auth(props) {
             <hr />
             <form onSubmit={signupSubmitHandler}>
                 <Input 
-                    id="name"
-                    element="input" 
-                    type="text" 
-                    label="Name" 
-                    validators={[VALIDATOR_REQUIRE()]}
-                    errorText="Please enter your name."
-                    onInput={inputHandler}
-                />
-
-                <Input 
                     id="email"
                     element="input" 
                     type="email" 
@@ -68,7 +54,7 @@ function Auth(props) {
                 />
 
                 <Button type="submit" disabled={!formState.isValid}>
-                    SIGN UP
+                    LOGIN
                 </Button>
             </form>
         </Card>
