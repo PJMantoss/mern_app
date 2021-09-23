@@ -36,7 +36,7 @@ const DUMMY_PLACES = [
 ];
 
 const UpdatePlace = () => {
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const placeId = useParams().placeId;
 
     const [formState, inputHandler, setFormData] = useForm(
