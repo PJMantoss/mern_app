@@ -38,7 +38,7 @@ const DUMMY_PLACES = [
 const UpdatePlace = () => {
     const placeId = useParams().placeId;
 
-    const [formState, inputHandler] = useForm(
+    const [formState, inputHandler, setFormData] = useForm(
         {
             title: {
                 value: '',
