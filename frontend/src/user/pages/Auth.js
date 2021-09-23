@@ -49,6 +49,10 @@ function Auth(props) {
                 errorText="Please enter your e-mail."
                 onInput={inputHandler}
             />
+
+            <Button type="submit" disabled={!formState.isValid}>
+                SIGN UP
+            </Button>
         </form>
     );
 }
