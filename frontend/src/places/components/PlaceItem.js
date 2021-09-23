@@ -41,6 +41,7 @@ const PlaceItem = props => {
                 </div>
             </Modal>
             <Modal 
+                show={showDeleteModal}
                 header="Are you sure?" 
                 footerClass="place-item__modal-actions" 
                 footer={
