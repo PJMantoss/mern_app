@@ -71,7 +71,7 @@ const PlaceItem = props => {
                     <div className="place-item__actions">
                         <Button inverse onClick={openMap}>VIEW ON MAP</Button>
                         <Button to={`places/${props.id}`}>EDIT</Button>
-                        <Button danger onClick={showDeleteModal}>DELETE</Button>
+                        <Button danger onClick={showDeleteWarningHandler}>DELETE</Button>
                     </div>
                 </Card>
             </li>
