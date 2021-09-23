@@ -27,6 +27,11 @@ const PlaceItem = props => {
                     <Map center={props.coordinates} zoom={16} />
                 </div>
             </Modal>
+            <Modal>
+                <p>
+                    Are you sure? This action cannot be undone.
+                </p>
+            </Modal>
             <li className="place-item">
                 <Card className="place-item__content">
                     <div className="place-item__image">
