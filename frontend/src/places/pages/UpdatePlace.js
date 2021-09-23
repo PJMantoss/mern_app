@@ -56,17 +56,14 @@ const UpdatePlace = () => {
 
     useEffect(() => {
         setFormData({
-            {
-                title: {
-                    value: identifiedPlace.title,
-                    isValid: false
-                },
-                description: {
-                    value: identifiedPlace.description,
-                    isValid: false
-                }
+            title: {
+                value: identifiedPlace.title,
+                isValid: true
             },
-            true
+            description: {
+                value: identifiedPlace.description,
+                isValid: true
+            }
         }, true);
     }, [])
 
