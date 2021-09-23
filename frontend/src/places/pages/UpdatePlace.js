@@ -77,7 +77,7 @@ const UpdatePlace = () => {
         console.log(formState.inputs); //Send these info to the backend
     }
 
-    if(!isLoading){
+    if(!identifiedPlace){
         return(
             <div className="center">
                 <h2>Loading...</h2>
