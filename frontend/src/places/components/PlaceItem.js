@@ -16,6 +16,8 @@ const PlaceItem = props => {
 
     const showDeleteWarningHandler = () => {};
 
+    const cancelDeleteHandler = () => {};
+
     return(
         <React.Fragment>
             <Modal
