@@ -47,8 +47,8 @@ const PlaceItem = props => {
                 footerClass="place-item__modal-actions" 
                 footer={
                     <React.Fragment>
-                        <Button inverse>CANCEL</Button>
-                        <Button danger>DELETE</Button>
+                        <Button inverse onClick={cancelDeleteHandler}>CANCEL</Button>
+                        <Button danger onClick={confirmDeleteHandler}>DELETE</Button>
                     </React.Fragment>
                 }
             >
