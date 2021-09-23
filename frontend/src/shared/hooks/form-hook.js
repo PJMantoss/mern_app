@@ -20,7 +20,9 @@ const formReducer = (state, action) => {
                 isValid: formIsValid
             };
         case 'SET_DATA':
-            return {}
+            return {
+                inputs: action.inputs
+            };
         default:
             return state;
     }
