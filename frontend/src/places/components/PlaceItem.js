@@ -18,7 +18,9 @@ const PlaceItem = props => {
         setShowDeleteModal(true);
     };
 
-    const cancelDeleteHandler = () => {};
+    const cancelDeleteHandler = () => {
+        setShowDeleteModal(false);
+    };
 
     return(
         <React.Fragment>
