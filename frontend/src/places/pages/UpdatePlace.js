@@ -56,6 +56,7 @@ const UpdatePlace = () => {
     const identifiedPlace = DUMMY_PLACES.find(p => p.id === placeId)
 
     useEffect(() => {
+        if (identifiedPlace){}
         setFormData({
             title: {
                 value: identifiedPlace.title,
