@@ -55,7 +55,7 @@ function Auth(props) {
                 id="password"
                 element="input" 
                 type="password" 
-                label="E-Mail" 
+                label="Password" 
                 validators={[VALIDATOR_MINLENGTH(6)]}
                 errorText="Please enter your password."
                 onInput={inputHandler}
