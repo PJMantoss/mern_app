@@ -50,7 +50,7 @@ export const useForm = (initialInputs, initialValidity) => {
             inputs: inputData,
             formIsValid: formValidity
         })
-    })
+    }, []);
 
     return [formState, inputHandler, setFormData]
 };
