@@ -57,7 +57,7 @@ function Auth(props) {
                 type="password" 
                 label="Password" 
                 validators={[VALIDATOR_MINLENGTH(6)]}
-                errorText="Please enter your password."
+                errorText="Password should be at least 6 characters long."
                 onInput={inputHandler}
             />
 
