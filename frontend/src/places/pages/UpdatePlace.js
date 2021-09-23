@@ -81,7 +81,9 @@ const UpdatePlace = () => {
     if(!identifiedPlace){
         return(
             <div className="center">
-                <h2>Loading...</h2>
+                <Card>
+                    <h2>Loading...</h2>
+                </Card>
             </div>
         )
     }
