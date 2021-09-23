@@ -29,8 +29,8 @@ const PlaceItem = props => {
             </Modal>
             <Modal header="Are you sure?" footerClass="place-item__modal-actions" footer={
                 <React.Fragment>
-                    <Button></Button>
-                    <Button></Button>
+                    <Button>CANCEL</Button>
+                    <Button>DELETE</Button>
                 </React.Fragment>
             }>
                 <p>
