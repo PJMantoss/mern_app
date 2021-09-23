@@ -14,7 +14,9 @@ const PlaceItem = props => {
 
     const closeMap = () => setShowMap(false);
 
-    const showDeleteWarningHandler = () => {};
+    const showDeleteWarningHandler = () => {
+        setShowDeleteModal(true);
+    };
 
     const cancelDeleteHandler = () => {};
 
