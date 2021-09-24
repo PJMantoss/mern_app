@@ -24,7 +24,9 @@ const Auth = () => {
         false
     )
 
-    const switchModeHandler = () => {};
+    const switchModeHandler = () => {
+        setIsLoginMode(prevMode => !prevMode)
+    };
 
     const loginSubmitHandler = e => {
         e.preventDefault();
