@@ -59,6 +59,8 @@ const Auth = () => {
                         id="name" 
                         element="input" 
                         type="text" 
+                        label="Name" 
+                        validators={[]}
                     />
                 )}
                 <Input 
