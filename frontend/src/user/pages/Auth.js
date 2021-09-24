@@ -61,6 +61,7 @@ const Auth = () => {
                         type="text" 
                         label="Name" 
                         validators={[VALIDATOR_REQUIRE()]}
+                        errorText="Please enter your name."
                     />
                 )}
                 <Input 
