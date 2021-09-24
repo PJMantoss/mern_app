@@ -63,7 +63,7 @@ const Auth = () => {
                 </Button>
             </form>
             <Button inverse onClick={switchModeHandler}>
-                SWITCH TO 
+                SWITCH TO {isLoginMode ? "SIGN UP" : "LOGIN"}
             </Button>
         </Card>
     );
