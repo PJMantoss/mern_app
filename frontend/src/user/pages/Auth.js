@@ -60,7 +60,7 @@ const Auth = () => {
                         element="input" 
                         type="text" 
                         label="Name" 
-                        validators={[]}
+                        validators={[VALIDATOR_REQUIRE()]}
                     />
                 )}
                 <Input 
