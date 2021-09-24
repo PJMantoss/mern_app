@@ -24,7 +24,7 @@ const Auth = () => {
         false
     )
 
-    const signupSubmitHandler = e => {
+    const loginSubmitHandler = e => {
         e.preventDefault();
         console.log(formState.inputs); //Send these info to the backend
     }
@@ -35,7 +35,7 @@ const Auth = () => {
         <Card className="authentication">
             <h2>Login Required</h2>
             <hr />
-            <form onSubmit={signupSubmitHandler}>
+            <form onSubmit={loginSubmitHandler}>
                 <Input 
                     id="email"
                     element="input" 
