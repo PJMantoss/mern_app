@@ -54,7 +54,9 @@ const Auth = () => {
             <h2>Login Required</h2>
             <hr />
             <form onSubmit={loginSubmitHandler}>
-                {!isLoginMode && (<Input />)}
+                {!isLoginMode && (
+                    <Input id="name" />
+                )}
                 <Input 
                     id="email"
                     element="input" 
