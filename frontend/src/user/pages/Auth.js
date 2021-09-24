@@ -32,7 +32,12 @@ const Auth = () => {
             formState.inputs.email.isValid && formState.inputs.password.isValid
             );
         }else{
-            setFormData({}, false)
+            setFormData({
+                ...formState.inputs,
+                name: {
+                    value: '',
+                }
+            }, false)
         }
         setIsLoginMode(prevMode => !prevMode)
     };
