@@ -36,6 +36,7 @@ const Auth = () => {
                 ...formState.inputs,
                 name: {
                     value: '',
+                    isValid: false
                 }
             }, false)
         }
