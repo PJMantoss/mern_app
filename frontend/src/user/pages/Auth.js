@@ -8,6 +8,7 @@ import Card from '../../shared/components/UIElements/Card';
 import './Auth.css'
 
 function Auth(props) {
+    const [isLogin, setIsLogin] = useState(true);
 
     const [formState, inputHandler] = useForm(
         {
