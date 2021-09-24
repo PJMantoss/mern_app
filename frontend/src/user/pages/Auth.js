@@ -31,7 +31,9 @@ const Auth = () => {
             }, 
             formState.inputs.email.isValid && formState.inputs.password.isValid
             );
-        }else{}
+        }else{
+            setFormData({}, false)
+        }
         setIsLoginMode(prevMode => !prevMode)
     };
 
