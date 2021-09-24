@@ -29,6 +29,8 @@ const Auth = () => {
         console.log(formState.inputs); //Send these info to the backend
     }
 
+    const switchModeHandler = () => {};
+
     return (
         <Card className="authentication">
             <h2>Login Required</h2>
@@ -58,7 +60,7 @@ const Auth = () => {
                     LOGIN
                 </Button>
             </form>
-            <Button type="submit" disabled={!formState.isValid} onClick={}>
+            <Button type="submit" disabled={!formState.isValid} onClick={switchModeHandler}>
                 SWITCH TO SIGN UP
             </Button>
         </Card>
