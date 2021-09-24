@@ -58,6 +58,9 @@ function Auth(props) {
                     LOGIN
                 </Button>
             </form>
+            <Button type="submit" disabled={!formState.isValid}>
+                SWITCH TO SIGN UP
+            </Button>
         </Card>
     );
 }
