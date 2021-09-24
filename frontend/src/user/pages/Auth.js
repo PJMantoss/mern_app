@@ -10,7 +10,7 @@ import './Auth.css'
 const Auth = () => {
     const [isLoginMode, setIsLoginMode] = useState(true);
 
-    const [formState, inputHandler] = useForm(
+    const [formState, inputHandler, setFormData] = useForm(
         {
             email: {
                 value: "",
