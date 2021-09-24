@@ -24,12 +24,12 @@ const Auth = () => {
         false
     )
 
+    const switchModeHandler = () => {};
+
     const loginSubmitHandler = e => {
         e.preventDefault();
         console.log(formState.inputs); //Send these info to the backend
     }
-
-    const switchModeHandler = () => {};
 
     return (
         <Card className="authentication">
