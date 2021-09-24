@@ -26,7 +26,9 @@ const Auth = () => {
 
     const switchModeHandler = () => {
         if(!isLoginMode){
-            setFormData({}, formState.inputs.email.isValid && formState.inputs.password.isValid)
+            setFormData({
+                name: undefined
+            }, formState.inputs.email.isValid && formState.inputs.password.isValid)
         }else{}
         setIsLoginMode(prevMode => !prevMode)
     };
