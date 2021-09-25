@@ -22,8 +22,12 @@ function App() {
   let routes;
 
   if(isLoggedIn){
-    routes = ();
-  }else{}
+    //routes = ();
+  }else{
+    routes = (
+      <React.Fragment></React.Fragment>
+    );
+  }
 
   return( 
     <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}>
