@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const AuthConext = () => {};
+export const AuthConext = createContext({});
