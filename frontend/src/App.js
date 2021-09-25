@@ -35,6 +35,7 @@ function App() {
         <Route path="/auth">
           <Auth />
         </Route>
+        <Redirect to="/auth" />
       </React.Fragment>
     );
   }
