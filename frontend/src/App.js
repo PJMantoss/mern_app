@@ -19,6 +19,12 @@ function App() {
     setIsLoggedIn(false);
   }, []);
 
+  let routes;
+
+  if(isLoggedIn){
+    routes = ();
+  }else{}
+
   return( 
     <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}>
       <Router>
