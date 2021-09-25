@@ -30,7 +30,13 @@ function App() {
         <Route path="/:userId/places">
           <UserPlaces />
         </Route>
-        
+        <Route path="/places/new" exact>
+          <NewPlace />
+        </Route>
+
+        <Route path="/places/:placeId">
+          <UpdatePlace />
+        </Route>
         <Redirect to="/auth" />
       </React.Fragment>
     );
