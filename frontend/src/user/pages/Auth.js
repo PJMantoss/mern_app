@@ -50,7 +50,7 @@ const Auth = () => {
     const loginSubmitHandler = e => {
         e.preventDefault();
         console.log(formState.inputs); //Send these info to the backend
-        auth.login()
+        auth.login();
     }
 
     return (
