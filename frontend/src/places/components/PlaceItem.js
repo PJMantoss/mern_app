@@ -79,7 +79,9 @@ const PlaceItem = props => {
                             <Button to={`places/${props.id}`}>EDIT</Button>
                         )}
                         
-                        <Button danger onClick={showDeleteWarningHandler}>DELETE</Button>
+                        {auth.isLoggedIn && (
+                            <Button danger onClick={showDeleteWarningHandler}>DELETE</Button>
+                        )}
                     </div>
                 </Card>
             </li>
