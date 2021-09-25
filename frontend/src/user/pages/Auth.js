@@ -9,6 +9,8 @@ import { AuthContext } from '../../shared/context/auth-context';
 import './Auth.css'
 
 const Auth = () => {
+    const auth = useContext(AuthContext);
+    
     const [isLoginMode, setIsLoginMode] = useState(true);
 
     const [formState, inputHandler, setFormData] = useForm(
