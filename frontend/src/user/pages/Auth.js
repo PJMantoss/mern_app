@@ -4,6 +4,7 @@ import { VALIDATOR_EMAIL, VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from '../../s
 import { useForm } from '../../shared/hooks/form-hook'; 
 import Button from '../../shared/components/FormElements/Button';
 import Card from '../../shared/components/UIElements/Card';
+import { AuthContext } from '../../shared/context/auth-context';
 
 import './Auth.css'
 
