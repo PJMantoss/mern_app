@@ -32,6 +32,9 @@ function App() {
         <Route path="/:userId/places">
           <UserPlaces />
         </Route>
+        <Route path="/auth">
+          <Auth />
+        </Route>
       </React.Fragment>
     );
   }
