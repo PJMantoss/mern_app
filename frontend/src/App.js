@@ -20,7 +20,7 @@ function App() {
   }, []);
 
   return( 
-    <AuthContext.Provider>
+    <AuthContext.Provider value={{ isLoggedIn: isLoggedIn }}>
       <Router>
         <MainNavigation />
         <main>
