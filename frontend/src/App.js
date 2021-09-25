@@ -10,34 +10,37 @@ import { AuthContext } from './shared/context/auth-context';
 
 function App() {
   return( 
-  <Router>
-    <MainNavigation />
-    <main>
-      <Switch>
-        <Route path="/" exact>
-          <Users />
-        </Route>
+    <AuthContext.Provider>
+      <Router>
+        <MainNavigation />
+        <main>
+          <Switch>
+            <Route path="/" exact>
+              <Users />
+            </Route>
 
-        <Route path="/:userId/places">
-          <UserPlaces />
-        </Route>
+            <Route path="/:userId/places">
+              <UserPlaces />
+            </Route>
 
-        <Route path="/places/new" exact>
-          <NewPlace />
-        </Route>
+            <Route path="/places/new" exact>
+              <NewPlace />
+            </Route>
 
-        <Route path="/places/:placeId">
-          <UpdatePlace />
-        </Route>
+            <Route path="/places/:placeId">
+              <UpdatePlace />
+            </Route>
 
-        <Route path="/auth">
-          <Auth />
-        </Route>
+            <Route path="/auth">
+              <Auth />
+            </Route>
 
-        <Redirect to="/" exact />
-      </Switch>
-    </main>
-  </Router>);
+            <Redirect to="/" exact />
+          </Switch>
+        </main>
+      </Router>
+    </AuthContext.Provider>
+  );
 }
 
 export default App;
