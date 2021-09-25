@@ -8,7 +8,7 @@ import { AuthContext } from '../../shared/context/auth-context';
 import './PlaceItem.css';
 
 const PlaceItem = props => {
-    const auth = useContext();
+    const auth = useContext(AuthContext);
     const [showMap, setShowMap] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
 
