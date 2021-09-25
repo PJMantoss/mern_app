@@ -10,7 +10,7 @@ import './Auth.css'
 
 const Auth = () => {
     const auth = useContext(AuthContext);
-    
+
     const [isLoginMode, setIsLoginMode] = useState(true);
 
     const [formState, inputHandler, setFormData] = useForm(
@@ -50,6 +50,7 @@ const Auth = () => {
     const loginSubmitHandler = e => {
         e.preventDefault();
         console.log(formState.inputs); //Send these info to the backend
+        auth.login()
     }
 
     return (
