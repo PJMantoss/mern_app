@@ -29,6 +29,9 @@ function App() {
         <Route path="/" exact>
           <Users />
         </Route>
+        <Route path="/:userId/places">
+          <UserPlaces />
+        </Route>
       </React.Fragment>
     );
   }
