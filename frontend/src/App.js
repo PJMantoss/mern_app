@@ -22,7 +22,18 @@ function App() {
   let routes;
 
   if(isLoggedIn){
-    //routes = ();
+    routes = (
+      <React.Fragment>
+        <Route path="/" exact>
+          <Users />
+        </Route>
+        <Route path="/:userId/places">
+          <UserPlaces />
+        </Route>
+        
+        <Redirect to="/auth" />
+      </React.Fragment>
+    );
   }else{
     routes = (
       <React.Fragment>
