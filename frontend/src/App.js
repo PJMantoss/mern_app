@@ -37,7 +37,7 @@ function App() {
         <Route path="/places/:placeId">
           <UpdatePlace />
         </Route>
-        <Redirect to="/" />
+        <Redirect to="/" exact />
       </React.Fragment>
     );
   }else{
