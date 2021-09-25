@@ -25,7 +25,11 @@ function App() {
     //routes = ();
   }else{
     routes = (
-      <React.Fragment></React.Fragment>
+      <React.Fragment>
+        <Route path="/" exact>
+          <Users />
+        </Route>
+      </React.Fragment>
     );
   }
 
