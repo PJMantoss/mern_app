@@ -10,6 +10,8 @@ import { AuthContext } from './shared/context/auth-context';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const login = useCallback();
+  
   return( 
     <AuthContext.Provider>
       <Router>
