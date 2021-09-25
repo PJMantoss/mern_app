@@ -9,7 +9,7 @@ import Auth from './user/pages/Auth';
 import { AuthContext } from './shared/context/auth-context';
 
 function App() {
-  
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return( 
     <AuthContext.Provider>
       <Router>
