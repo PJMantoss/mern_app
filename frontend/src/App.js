@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   let routes;
-
+//If user is Logged in, show the following routes/components
   if(isLoggedIn){
     routes = (
       <Switch>
