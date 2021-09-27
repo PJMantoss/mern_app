@@ -12,7 +12,7 @@ const Auth = () => {
     const auth = useContext(AuthContext);
 
     const [isLoginMode, setIsLoginMode] = useState(true);
-    
+
 //Use the following methods from the useForm custom Hook
     const [formState, inputHandler, setFormData] = useForm(
         {
@@ -27,7 +27,7 @@ const Auth = () => {
         },
         false
     )
-
+//Handles switching from LOGIN form to SIGN UP form
     const switchModeHandler = () => {
         if(!isLoginMode){
             setFormData({
