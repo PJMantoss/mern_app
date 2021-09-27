@@ -9,6 +9,7 @@ import Auth from './user/pages/Auth';
 import { AuthContext } from './shared/context/auth-context';
 
 function App() {
+  //Login state
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const login = useCallback(() => {
