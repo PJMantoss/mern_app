@@ -41,7 +41,7 @@ function App() {
         <Redirect to="/" exact />
       </Switch>
     );
-  }else{
+  }else{ //If user is NOT logged show only the following routes/components
     routes = (
       <Switch>
         <Route path="/" exact>
