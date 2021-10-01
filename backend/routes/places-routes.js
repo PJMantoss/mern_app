@@ -23,7 +23,7 @@ router.get('/:pid', (req, res, next) => {
         return p.id === placeId;
     })
     console.log('GET Request in Places.');
-    res.json({message: "It works!"});
+    res.json({place});
 });
 
 module.exports = router;
