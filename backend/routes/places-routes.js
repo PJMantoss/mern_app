@@ -22,7 +22,7 @@ router.get('/:pid', (req, res, next) => {
     const place = DUMMY_PLACES.find(p => {
         return p.id === placeId;
     })
-    console.log('GET Request in Places.');
+    
     res.json({place});
 });
 
