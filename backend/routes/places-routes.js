@@ -26,6 +26,11 @@ router.get('/:pid', (req, res, next) => {
     res.json({place});
 });
 
-router.get('/:uid', (req, res, next) => {});
+router.get('/:uid', (req, res, next) => {
+    const userId = req.params.uid;
+    const users = DUMMY_PLACES.find(p => {
+        return
+    })
+});
 
 module.exports = router;
