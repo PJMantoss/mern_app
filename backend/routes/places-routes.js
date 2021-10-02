@@ -19,13 +19,13 @@ const DUMMY_PLACES = [
 
 router.get('/:pid', (req, res, next) => {
     const placeId = req.params.pid;
-    
+
     const place = DUMMY_PLACES.find(p => {
         return p.id === placeId;
     });
 
     if(!place){
-        return res.status(404).json({message: "Couldnot find a place for the provided id."});
+        return res.status(404).json({message: "Could not find a place for the provided id."});
     }
     
     res.json({ place });
