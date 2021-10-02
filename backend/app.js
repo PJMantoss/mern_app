@@ -15,7 +15,7 @@ app.use((error, req, res, next) => {
     }
 
     res.status(error.code || 500);
-    res.json({ message: '' });
+    res.json({ message: error.message || '' });
 });
 
 app.listen(5000);
