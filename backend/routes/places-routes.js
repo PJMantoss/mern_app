@@ -24,7 +24,7 @@ router.get('/:pid', (req, res, next) => {
     });
 
     if(!place){
-        return res.status(404).json({message: "Couldnot find a place for the provided id."})
+        return res.status(404).json({message: "Couldnot find a place for the provided id."});
     }
     
     res.json({ place });
