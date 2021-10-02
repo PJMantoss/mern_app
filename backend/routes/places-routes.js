@@ -38,6 +38,10 @@ router.get('/user/:uid', (req, res, next) => {
         return p.creator === userId;
     });
 
+    if(!place){
+        return res.status(404).json({message: "Could not find a user for the provided id."});
+    }
+
     res.json({ place })
 });
 
