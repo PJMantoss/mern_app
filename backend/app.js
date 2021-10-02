@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-//middleware
 const placesRoutes = require('./routes/places-routes');
 
+//middleware
 const app = express();
 
 app.use(placesRoutes);
