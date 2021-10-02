@@ -1,1 +1,3 @@
-class httError {};
+class httError extends Error{
+    constructor();
+};
