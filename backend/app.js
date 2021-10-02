@@ -8,6 +8,8 @@ const app = express();
 //middlewares
 app.use('/api/places', placesRoutes);
 
-app.use((error, req, res, next) => {}); //Only run when request has an error
+app.use((error, req, res, next) => {
+    if(res.headerSent){}
+}); //Only run when request has an error
 
 app.listen(5000);
