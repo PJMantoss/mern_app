@@ -2,6 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
+const httpError = require('../models/http-error');
+
 const DUMMY_PLACES = [
     {
         id: 'p1',
