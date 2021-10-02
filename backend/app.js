@@ -10,7 +10,9 @@ app.use('/api/places', placesRoutes);
 
 //Error Handling middleware: Only runs when request has an error
 app.use((error, req, res, next) => {
-    if(res.headerSent){}
+    if(res.headerSent){
+        return next(error);
+    }
 });
 
 app.listen(5000);
