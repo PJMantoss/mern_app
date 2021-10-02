@@ -24,7 +24,7 @@ router.get('/:pid', (req, res, next) => {
     });
 
     if(!place){
-        return
+        return res.status(404).json({})
     }
     
     res.json({ place });
