@@ -1,3 +1,5 @@
 class httError extends Error{
-    constructor();
+    constructor(message, errorCode){
+        super(message);
+    };
 };
