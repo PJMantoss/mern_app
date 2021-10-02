@@ -19,6 +19,7 @@ const DUMMY_PLACES = [
 
 router.get('/:pid', (req, res, next) => {
     const placeId = req.params.pid;
+    
     const place = DUMMY_PLACES.find(p => {
         return p.id === placeId;
     });
