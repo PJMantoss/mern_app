@@ -4,19 +4,7 @@ const router = express.Router();
 
 const httpError = require('../models/http-error');
 
-router.get('/:pid', (req, res, next) => {
-    const placeId = req.params.pid;
-
-    const place = DUMMY_PLACES.find(p => {
-        return p.id === placeId;
-    });
-
-    if(!place){
-        throw new Error("Could not find a place for the provided id.", 404);
-    }
-    
-    res.json({ place });
-});
+router.get('/:pid');
 
 router.get('/user/:uid', (req, res, next) => {
     const userId = req.params.uid;
