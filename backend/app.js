@@ -14,6 +14,10 @@ app.use(express.json());
 //middlewares
 app.use('/api/places', placesRoutes);
 
+app.use((req, res, next) => {
+    const error = new httpError("Could not find this route.", 404);
+})
+
 //Error Handling middleware: Only runs when request has an error
 app.use((error, req, res, next) => {
     if(res.headerSent){
