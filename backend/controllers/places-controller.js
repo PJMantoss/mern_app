@@ -1,6 +1,6 @@
 const httpError = require('../models/http-error');
 
-const uuid = require('uuid/v4');
+const {v4: uuidv4} = require('uuid');
 
 const DUMMY_PLACES = [
     {
