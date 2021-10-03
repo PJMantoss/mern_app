@@ -49,7 +49,13 @@ const getPlaceByUserId = (req, res, next) => {
 const createPlace = (req, res, next) => {
     const { title, description, coordinates, address, creator } = req.body;
 
-    const createdPlace = {};
+    const createdPlace = {
+       title,
+       description,
+       location: coordinates,
+       address,
+       creator
+    };
 
     DUMMY_PLACES.push(createdPlace);
 };
