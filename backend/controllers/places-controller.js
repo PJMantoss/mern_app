@@ -12,3 +12,17 @@ const DUMMY_PLACES = [
         creator: 'u1'
     }
 ]
+
+const getPlaceById = (req, res, next) => {
+    const placeId = req.params.pid;
+
+    const place = DUMMY_PLACES.find(p => {
+        return p.id === placeId;
+    });
+
+    if(!place){
+        throw new Error("Could not find a place for the provided id.", 404);
+    }
+    
+    res.json({ place });
+};
