@@ -50,3 +50,4 @@ const createPlace = (req, res, next) => {};
 
 exports.getPlaceById = getPlaceById;
 exports.getPlaceByUserId = getPlaceByUserId;
+exports.createPlace = createPlace;
