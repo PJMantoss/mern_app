@@ -57,7 +57,10 @@ const createPlace = (req, res, next) => {
        creator
     };
 
-    DUMMY_PLACES.push(createdPlace); // or DUMMY_PLACES.unshift(createdPlace) if it's to be added as the first item
+    DUMMY_PLACES.push(createdPlace); 
+    // or DUMMY_PLACES.unshift(createdPlace) if it's to be added as the first item
+
+    res.status(201).json({ place: createdPlace })
 };
 
 exports.getPlaceById = getPlaceById;
