@@ -48,6 +48,8 @@ const getPlaceByUserId = (req, res, next) => {
 
 const createPlace = (req, res, next) => {
     const { title, description, coordinates, address, creator } = req.body;
+
+    const createdPlace = {};
 };
 
 exports.getPlaceById = getPlaceById;
