@@ -47,3 +47,4 @@ const getPlaceByUserId = (req, res, next) => {
 }
 
 exports.getPlaceById = getPlaceById;
+exports.getPlaceByUserId = getPlaceByUserId;
