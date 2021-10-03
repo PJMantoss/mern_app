@@ -5,6 +5,8 @@ const placesRoutes = require('./routes/places-routes');
 
 const app = express();
 
+const httpError = require('./models/http-error');
+
 //app.use(bodyParser.json());
 
 app.use(express.json());
