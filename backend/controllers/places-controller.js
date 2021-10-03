@@ -45,3 +45,5 @@ const getPlaceByUserId = (req, res, next) => {
 
     res.json({ place })
 }
+
+exports.getPlaceById = getPlaceById;
