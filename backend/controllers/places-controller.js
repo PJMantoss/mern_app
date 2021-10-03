@@ -15,7 +15,7 @@ const DUMMY_PLACES = [
     }
 ]
 
-//Middleware functions
+//To be used as Call back functions in Places Routes
 const getPlaceById = (req, res, next) => {
     const placeId = req.params.pid;
 
