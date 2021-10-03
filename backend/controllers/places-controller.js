@@ -13,6 +13,7 @@ const DUMMY_PLACES = [
     }
 ]
 
+//Middleware functions
 const getPlaceById = (req, res, next) => {
     const placeId = req.params.pid;
 
