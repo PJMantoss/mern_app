@@ -6,6 +6,7 @@ const placesRoutes = require('./routes/places-routes');
 const app = express();
 
 //app.use(bodyParser.json());
+
 app.use(express.json());
 
 //middlewares
