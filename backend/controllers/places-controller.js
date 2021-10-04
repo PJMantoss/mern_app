@@ -68,6 +68,9 @@ const createPlace = (req, res, next) => {
 
 const updatePlace = (req, res, next) => {
     const { title, description } = req.body;
+    const placeId = req.params.id;
+
+    const updatedPlace = { ...DUMMY_PLACES.find(p => p.id === placeId) };
 };
 
 const deletePlace = (req, res, next) => {};
