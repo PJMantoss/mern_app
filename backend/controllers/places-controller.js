@@ -81,7 +81,10 @@ const updatePlace = (req, res, next) => {
     res.status(200).json({ place: updatedPlace });
 };
 
-const deletePlace = (req, res, next) => {};
+const deletePlace = (req, res, next) => {
+    const placeId = req.params.id;
+    
+};
 
 exports.getPlaceById = getPlaceById;
 exports.getPlaceByUserId = getPlaceByUserId;
