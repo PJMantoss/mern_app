@@ -71,6 +71,7 @@ const updatePlace = (req, res, next) => {
     const placeId = req.params.id;
 
     const updatedPlace = { ...DUMMY_PLACES.find(p => p.id === placeId) };
+    const placeIndex = DUMMY_PLACES.findIndex(p => p.id === placeId);
 };
 
 const deletePlace = (req, res, next) => {};
