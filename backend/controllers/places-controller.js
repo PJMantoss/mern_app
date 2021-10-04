@@ -75,6 +75,8 @@ const updatePlace = (req, res, next) => {
 
     updatedPlace.title = title;
     updatedPlace.description = description;
+
+    DUMMY_PLACES[placeIndex] = updatedPlace;
 };
 
 const deletePlace = (req, res, next) => {};
