@@ -66,7 +66,9 @@ const createPlace = (req, res, next) => {
     res.status(201).json({ place: createdPlace })
 };
 
-const updatePlace = (req, res, next) => {};
+const updatePlace = (req, res, next) => {
+    const { title, description } = req.body;
+};
 
 const deletePlace = (req, res, next) => {};
 
