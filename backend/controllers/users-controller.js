@@ -18,6 +18,13 @@ const getUsers = (req, res, next) => {
 };
 
 const signup = (req, res, next) => {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+        console.log(errors);
+        res.status(422);
+        throw new httpError("Invalid inputs. Please check data.", 422);
+    }
+
     const { name, email, password } = req.body;
 
     const hasUser = DUMMY_USERS.find(u => u.email === email);
