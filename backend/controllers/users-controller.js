@@ -17,11 +17,17 @@ let DUMMY_PLACES = [
     }
 ]
 
-const getAllUsers = (req, res, next) => {};
+const getAllUsers = (req, res, next) => {
+    res.status(200).json({ message: "All Users" })
+};
 
-const signUpUser = (req, res, next) => {};
+const signUpUser = (req, res, next) => {
+    res.status(200).json({ message: "User Signed In" })
+};
 
-const loginUser = (req, res, next) => {};
+const loginUser = (req, res, next) => {
+    res.status(200).json({ message: "User Logged In" })
+};
 
 exports.getAllUsers = getAllUsers;
 exports.signUpUser = signUpUser;
