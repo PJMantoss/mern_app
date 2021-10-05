@@ -31,6 +31,14 @@ const signup = (req, res, next) => {
 };
 
 const login = (req, res, next) => {
+    const { email, password } = req.body;
+
+    const identifiedUser = DUMMY_USERS.find(u => u.email === email);
+
+    if(!identifiedUser){
+        throw new httpError('Wrong Credentials: Could not find user.', 401);
+    }
+
     res.status(200).json({ message: "User Logged In" })
 };
 
