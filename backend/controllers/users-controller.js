@@ -16,6 +16,14 @@ const getUsers = (req, res, next) => {
 };
 
 const signup = (req, res, next) => {
+    const { name, email, password } = req.body;
+
+    const createdUser = {
+        id:uuidv4(),
+        name,
+        email,
+        password
+    }
     res.status(200).json({ message: "User Signed Up" })
 };
 
