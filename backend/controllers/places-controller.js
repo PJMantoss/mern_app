@@ -60,7 +60,7 @@ const createPlace = async (req, res, next) => {
         next(new httpError("Invalid inputs. Please check data.", 422));
     }
 
-    const { title, description, coordinates, address, creator } = req.body;
+    const { title, description, address, creator } = req.body;
     // Obj destructuring. Same as ... const title = req.body.title
 
     let coordinates;
