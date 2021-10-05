@@ -26,8 +26,8 @@ const signup = (req, res, next) => {
     }
 
     DUMMY_USERS.push(createdUser);
-    
-    res.status(200).json({ message: "User Signed Up" })
+
+    res.status(201).json({ user: createdUser })
 };
 
 const login = (req, res, next) => {
