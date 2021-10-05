@@ -13,6 +13,9 @@ router.post(
     check('name')
     .not()
     .isEmpty(),
+    check('email')
+    .normalizeEmail()
+    .isEmail(),
     usersController.signup
     );
 
