@@ -51,6 +51,11 @@ const getPlacesByUserId = (req, res, next) => {
 }
 
 const createPlace = (req, res, next) => {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+        throw new httpError("Invalid inputs. Please chack data.", 422);
+    }
+
     const { title, description, coordinates, address, creator } = req.body;
 
     const createdPlace = {
