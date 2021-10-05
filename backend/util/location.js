@@ -7,6 +7,6 @@ async function getCoordsForAddress(address){
     //     lat: 40.7484405,
     //     lng: -73.9878584
     // }
-
-    axios.get(``);
+//From Google Geocoding API - Geocoding Request & Response
+    axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY`);
 }
