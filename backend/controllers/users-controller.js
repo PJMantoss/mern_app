@@ -22,7 +22,7 @@ const getAllUsers = (req, res, next) => {
 };
 
 const signUpUser = (req, res, next) => {
-    res.status(200).json({ message: "User Signed In" })
+    res.status(200).json({ message: "User Signed Up" })
 };
 
 const loginUser = (req, res, next) => {
