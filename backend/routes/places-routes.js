@@ -4,11 +4,11 @@ const { check } = require('express-validator');
 
 const router = express.Router();
 
-const placesControllers = require('../controllers/places-controller');
+const placesController = require('../controllers/places-controller');
 
-router.get('/:pid', placesControllers.getPlaceById);
+router.get('/:pid', placesController.getPlaceById);
 
-router.get('/user/:uid', placesControllers.getPlacesByUserId);
+router.get('/user/:uid', placesController.getPlacesByUserId);
 
 router.post(
     '/', 
@@ -19,11 +19,11 @@ router.post(
     check('address')
     .not()
     .isEmpty(), 
-    placesControllers.createPlace
+    placesController.createPlace
     );
 
-router.patch('/:pid', placesControllers.updatePlace);
+router.patch('/:pid', placesController.updatePlace);
 
-router.delete('/:pid', placesControllers.deletePlace);
+router.delete('/:pid', placesController.deletePlace);
 
 module.exports = router;
