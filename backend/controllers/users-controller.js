@@ -22,3 +22,7 @@ const getAllUsers = (req, res, next) => {};
 const signUpUser = (req, res, next) => {};
 
 const loginUser = (req, res, next) => {};
+
+exports.getAllUsers = getAllUsers;
+exports.signUpUser = signUpUser;
+exports.loginUser = loginUser;
