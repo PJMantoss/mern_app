@@ -8,5 +8,5 @@ async function getCoordsForAddress(address){
     //     lng: -73.9878584
     // }
 //From Google Geocoding API - Geocoding Request & Response
-    axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=YOUR_API_KEY`);
+    axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${API_KEY}`);
 }
