@@ -53,6 +53,8 @@ const getPlacesByUserId = (req, res, next) => {
 const createPlace = (req, res, next) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
+        console.log(errors);
+        res.status(422);
         throw new httpError("Invalid inputs. Please chack data.", 422);
     }
 
