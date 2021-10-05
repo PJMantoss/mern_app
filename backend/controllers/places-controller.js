@@ -61,6 +61,11 @@ const createPlace = async (req, res, next) => {
     }
 
     const { title, description, coordinates, address, creator } = req.body;
+    // Obj destructuring. Same as ... const title = req.body.title
+
+    let coordinates;
+
+    try{}catch(error){}
 
     const createdPlace = {
        id: uuidv4(),
