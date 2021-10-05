@@ -16,3 +16,9 @@ let DUMMY_PLACES = [
         creator: 'u1'
     }
 ]
+
+const getAllUsers = (req, res, next) => {};
+
+const signUpUser = (req, res, next) => {};
+
+const loginUser = (req, res, next) => {};
