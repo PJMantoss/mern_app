@@ -36,7 +36,7 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-    .connect()
+    .connect('mongodb+srv://mantoss:superstar@cluster0.kxgzl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
     .then(() => {
         app.listen(5000); //If connection was sucessful start backend server
     })
