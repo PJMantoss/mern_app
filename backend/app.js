@@ -40,4 +40,6 @@ mongoose
     .then(() => {
         app.listen(5000); //If connection was sucessful start backend server
     })
-    .catch();
+    .catch(err => {
+        console.log(err);
+    });
