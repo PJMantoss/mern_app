@@ -5,6 +5,8 @@ const placesRoutes = require('./routes/places-routes');
 
 const usersRoutes = require('./routes/users-routes');
 
+const mongoose = require('mongoose');
+
 const app = express();
 
 const httpError = require('./models/http-error');
@@ -32,5 +34,7 @@ app.use((error, req, res, next) => {
     res.status(error.code || 500);
     res.json({ message: error.message || 'An Unknown Error Occurred' });
 });
+
+mongoose.connect()
 
 app.listen(5000);
