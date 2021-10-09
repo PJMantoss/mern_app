@@ -11,5 +11,5 @@ const placesSchema = new Schema({
         lat: { type: Number, required: true },
         lng
     },
-    creator: {}
+    creator: { type: String, required: true }
 });
