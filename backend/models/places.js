@@ -13,3 +13,5 @@ const placesSchema = new Schema({
     },
     creator: { type: String, required: true }
 });
+
+module.exports = mongoose.model();
