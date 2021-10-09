@@ -9,7 +9,7 @@ const placesSchema = new Schema({
     address: { type: String, required: true },
     location: {
         lat: { type: Number, required: true },
-        lng
+        lng: { type: Number, required: true }
     },
     creator: { type: String, required: true }
 });
