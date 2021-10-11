@@ -27,7 +27,7 @@ let DUMMY_PLACES = [
 const getPlaceById = async (req, res, next) => {
     const placeId = req.params.pid;
 
-    const place = Place.findbyId();
+    const place = Place.findbyId(placeId);
 
     // const place = DUMMY_PLACES.find(p => {
     //     return p.id === placeId;
