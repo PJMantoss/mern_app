@@ -38,12 +38,12 @@ const getPlaceById = (req, res, next) => {
     res.json({ place });
 };
 
-const getPlacesByUserId = (req, res, next) => {
+const getPlacesByUserId = async (req, res, next) => {
     const userId = req.params.uid;
 
-    const places = DUMMY_PLACES.filter(p => {
-        return p.creator === userId;
-    });
+    // const places = DUMMY_PLACES.filter(p => {
+    //     return p.creator === userId;
+    // });
 
     if(!places || places.length === 0){
         return next(
