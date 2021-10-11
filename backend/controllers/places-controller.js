@@ -27,10 +27,13 @@ let DUMMY_PLACES = [
 const getPlaceById = async (req, res, next) => {
     const placeId = req.params.pid;
 
+    let place;
+
     try{
-        const place = await Place.findbyId(placeId);
+        place = await Place.findbyId(placeId);
     }catch(err){
         const error = new httpError('Error! Could not find place.', 500);
+        return next(error);
     }
 
     // const place = DUMMY_PLACES.find(p => {
