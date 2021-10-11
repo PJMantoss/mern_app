@@ -4,7 +4,7 @@ const { validationResult } = require('express-validator');
 
 const getCoordsForAddress = require('../util/location');
 
-const {v4: uuidv4} = require('uuid');
+//const {v4: uuidv4} = require('uuid');
 
 const Place = require('../models/place');
 
@@ -27,7 +27,11 @@ let DUMMY_PLACES = [
 const getPlaceById = async (req, res, next) => {
     const placeId = req.params.pid;
 
-    const place = await Place.findbyId(placeId);
+    try{
+        const place = await Place.findbyId(placeId);
+    }catch(err){
+        const error = new httpError('Error! Could not find place.', 500);
+    }
 
     // const place = DUMMY_PLACES.find(p => {
     //     return p.id === placeId;
