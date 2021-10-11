@@ -73,14 +73,7 @@ const createPlace = async (req, res, next) => {
         next(error)
     }
 
-    const createdPlace = {
-       id: uuidv4(),
-       title,
-       description,
-       location: coordinates,
-       address,
-       creator
-    };
+    const createdPlace = new Place
 
     DUMMY_PLACES.push(createdPlace); 
     // or DUMMY_PLACES.unshift(createdPlace) if it's to be added as the first item
