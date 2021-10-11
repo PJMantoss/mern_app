@@ -86,6 +86,7 @@ const createPlace = async (req, res, next) => {
          await createdPlace.save();
      }catch(err){
          const error = new httpError("Creating Place failed, try again.", 500)
+         return next(error);
      }
 
     // DUMMY_PLACES.push(createdPlace); 
