@@ -24,12 +24,14 @@ let DUMMY_PLACES = [
 ]
 
 //To be used as Call back functions in Places Routes
-const getPlaceById = (req, res, next) => {
+const getPlaceById = async (req, res, next) => {
     const placeId = req.params.pid;
 
-    const place = DUMMY_PLACES.find(p => {
-        return p.id === placeId;
-    });
+    const place = Place.findbyId();
+
+    // const place = DUMMY_PLACES.find(p => {
+    //     return p.id === placeId;
+    // });
 
     if(!place){
         throw new Error("Could not find a place for the provided id.", 404);
@@ -38,12 +40,12 @@ const getPlaceById = (req, res, next) => {
     res.json({ place });
 };
 
-const getPlacesByUserId = async (req, res, next) => {
+const getPlacesByUserId = (req, res, next) => {
     const userId = req.params.uid;
 
-    // const places = DUMMY_PLACES.filter(p => {
-    //     return p.creator === userId;
-    // });
+    const places = DUMMY_PLACES.filter(p => {
+        return p.creator === userId;
+    });
 
     if(!places || places.length === 0){
         return next(
