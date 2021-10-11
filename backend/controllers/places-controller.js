@@ -82,7 +82,11 @@ const createPlace = async (req, res, next) => {
         creator
      });
 
-     createdPlace.save();
+     try{
+         await createdPlace.save();
+     }catch(err){
+         const error = new httpError("Creating Place failed, try again.", 500)
+     }
 
     // DUMMY_PLACES.push(createdPlace); 
     // or DUMMY_PLACES.unshift(createdPlace) if it's to be added as the first item
