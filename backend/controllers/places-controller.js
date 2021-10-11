@@ -41,7 +41,7 @@ const getPlaceById = async (req, res, next) => {
     // });
 
     if(!place){
-        throw new httpError("Could not find a place for the provided id.", 404);
+        const error = httpError("Could not find a place for the provided id.", 404);
         return next(error);
     }
     
