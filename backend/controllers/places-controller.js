@@ -30,7 +30,7 @@ const getPlaceById = async (req, res, next) => {
     let place;
 
     try{
-        place = await Place.findbyId(placeId);
+        place = await Place.findById(placeId);
     }catch(err){
         const error = new httpError('Error! Could not find place.', 500);
         return next(error);
