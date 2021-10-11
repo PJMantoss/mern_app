@@ -4,7 +4,7 @@ const { validationResult } = require('express-validator');
 
 const getCoordsForAddress = require('../util/location');
 
-//const {v4: uuidv4} = require('uuid');
+const {v4: uuidv4} = require('uuid');
 
 const Place = require('../models/place');
 
