@@ -45,7 +45,7 @@ const getPlaceById = async (req, res, next) => {
         return next(error);
     }
     
-    res.json({ place: place.toObject() }); // toObject() converts json to JS Obj
+    res.json({ place: place.toObject({ getters: true }) }); // toObject() converts json to JS Obj
 };
 
 const getPlacesByUserId = (req, res, next) => {
