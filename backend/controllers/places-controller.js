@@ -6,6 +6,8 @@ const getCoordsForAddress = require('../util/location');
 
 const {v4: uuidv4} = require('uuid');
 
+const Place = require('../models/places');
+
 let DUMMY_PLACES = [
     {
         id: 'p1',
