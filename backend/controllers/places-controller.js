@@ -121,7 +121,14 @@ const updatePlace = (req, res, next) => {
     // const updatedPlace = { ...DUMMY_PLACES.find(p => p.id === placeId) };
     // const placeIndex = DUMMY_PLACES.findIndex(p => p.id === placeId);
 
+    let place;
 
+    try{
+        place = await Place.findById(placeId);
+    }catch(err){
+        const error = new httpError('Error! Could not find place.', 500);
+        return next(error);
+    }
 
     updatedPlace.title = title;
     updatedPlace.description = description;
