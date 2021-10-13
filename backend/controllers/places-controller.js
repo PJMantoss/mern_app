@@ -126,7 +126,7 @@ const updatePlace = async (req, res, next) => {
     try{
         place = await Place.findById(placeId);
     }catch(err){
-        const error = new httpError('Error! Could not find place.', 500);
+        const error = new httpError('Error! Could not update place.', 500);
         return next(error);
     }
 
