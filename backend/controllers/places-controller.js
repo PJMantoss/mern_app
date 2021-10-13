@@ -153,7 +153,7 @@ const updatePlace = async (req, res, next) => {
 };
 
 const deletePlace = async (req, res, next) => {
-    const placeId = req.params.id;
+    const placeId = req.params.pid;
 
     let place;
 
