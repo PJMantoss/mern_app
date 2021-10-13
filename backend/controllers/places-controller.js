@@ -137,6 +137,13 @@ const updatePlace = async (req, res, next) => {
     place.title = title;
     place.description = description;
 
+    try{
+        await Place.save();
+    }catch(err){
+        const error = new httpError('Error! Could not update place.', 500);
+        return next(error);
+    }
+
     res.status(200).json({ place: place.toObject({ getters: true }) });
 };
 
