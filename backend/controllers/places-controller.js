@@ -70,7 +70,7 @@ const getPlacesByUserId = async (req, res, next) => {
         );
     }
 
-    res.json({ places })
+    res.json({ places: places.map(place => place.toObject({ getters: true })) })
 }
 
 const createPlace = async (req, res, next) => {
