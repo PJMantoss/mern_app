@@ -114,7 +114,7 @@ const createPlace = async (req, res, next) => {
     res.status(201).json({ place: createdPlace })
 };
 
-const updatePlace = (req, res, next) => {
+const updatePlace = async (req, res, next) => {
     const { title, description } = req.body;
     const placeId = req.params.id;
 
