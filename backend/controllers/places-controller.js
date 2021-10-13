@@ -130,10 +130,12 @@ const updatePlace = async (req, res, next) => {
         return next(error);
     }
 
-    updatedPlace.title = title;
-    updatedPlace.description = description;
+    // updatedPlace.title = title;
+    // updatedPlace.description = description;
+    // DUMMY_PLACES[placeIndex] = updatedPlace;
 
-    DUMMY_PLACES[placeIndex] = updatedPlace;
+    place.title = title;
+    place.description = description;
 
     res.status(200).json({ place: updatedPlace });
 };
