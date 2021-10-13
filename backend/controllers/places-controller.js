@@ -51,9 +51,18 @@ const getPlaceById = async (req, res, next) => {
 const getPlacesByUserId = (req, res, next) => {
     const userId = req.params.uid;
 
-    const places = DUMMY_PLACES.filter(p => {
-        return p.creator === userId;
-    });
+    let place;
+
+    try{
+        place = await Place.findById(userId);
+    }catch(err){
+        const error = new httpError('Error! Could not find place.', 500);
+        return next(error);
+    }
+
+    // const places = DUMMY_PLACES.filter(p => {
+    //     return p.creator === userId;
+    // });
 
     if(!places || places.length === 0){
         return next(
