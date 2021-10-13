@@ -56,7 +56,7 @@ const getPlacesByUserId = async (req, res, next) => {
     try{
         place = await Place.find({ creator: userId });
     }catch(err){
-        const error = new httpError('Error! Could not find place.', 500);
+        const error = new httpError('Fetching places failed. Please try again.', 500);
         return next(error);
     }
 
