@@ -115,6 +115,8 @@ const createPlace = async (req, res, next) => {
 };
 
 const updatePlace = async (req, res, next) => {
+    const errors = validationResult(req);
+    
     const { title, description } = req.body;
     const placeId = req.params.id;
 
