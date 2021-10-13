@@ -48,13 +48,13 @@ const getPlaceById = async (req, res, next) => {
     res.json({ place: place.toObject({ getters: true }) }); // toObject() converts json to JS Obj
 };
 
-const getPlacesByUserId = (req, res, next) => {
+const getPlacesByUserId = async (req, res, next) => {
     const userId = req.params.uid;
 
     let place;
 
     try{
-        place = await Place.findById(userId);
+        place = await Place.find({ creator: userId });
     }catch(err){
         const error = new httpError('Error! Could not find place.', 500);
         return next(error);
