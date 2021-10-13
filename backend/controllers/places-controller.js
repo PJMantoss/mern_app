@@ -117,11 +117,11 @@ const createPlace = async (req, res, next) => {
 const updatePlace = async (req, res, next) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
-        throw new httpError('', 422);
+        throw new httpError('Invalids inputs passed, please check your data.', 422);
     }
 
     const { title, description } = req.body;
-    const placeId = req.params.id;
+    const placeId = req.params.pid;
 
     // const updatedPlace = { ...DUMMY_PLACES.find(p => p.id === placeId) };
     // const placeIndex = DUMMY_PLACES.findIndex(p => p.id === placeId);
