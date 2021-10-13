@@ -116,7 +116,10 @@ const createPlace = async (req, res, next) => {
 
 const updatePlace = async (req, res, next) => {
     const errors = validationResult(req);
-    
+    if(!errors.isEmpty()){
+        throw new httpError('', 422);
+    }
+
     const { title, description } = req.body;
     const placeId = req.params.id;
 
