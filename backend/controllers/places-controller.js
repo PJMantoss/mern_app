@@ -138,7 +138,7 @@ const updatePlace = async (req, res, next) => {
     place.description = description;
 
     try{
-        await Place.save();
+        await place.save();
     }catch(err){
         const error = new httpError('Error! Could not update place.', 500);
         return next(error);
@@ -164,6 +164,13 @@ const deletePlace = async (req, res, next) => {
     // }
 
     // DUMMY_PLACES = DUMMY_PLACES.filter(p => p.id !== placeId);
+
+    try{
+        await place.remove();
+    }catch(err){
+        const error = new httpError('Error! Could not delete place.', 500);
+        return next(error);
+    }
 
     res.status(200).json({ message: "Place Deleted." })
 };
