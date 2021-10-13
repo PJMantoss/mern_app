@@ -51,10 +51,10 @@ const getPlaceById = async (req, res, next) => {
 const getPlacesByUserId = async (req, res, next) => {
     const userId = req.params.uid;
 
-    let place;
+    let places;
 
     try{
-        place = await Place.find({ creator: userId });
+        places = await Place.find({ creator: userId });
     }catch(err){
         const error = new httpError('Fetching places failed. Please try again.', 500);
         return next(error);
