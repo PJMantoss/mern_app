@@ -27,7 +27,7 @@ const signup = async (req, res, next) => {
         return next(new httpError("Invalid inputs. Please check data.", 422));
     }
 
-    const { name, email, password } = req.body;
+    const { name, email, password, places } = req.body;
 
     // const hasUser = DUMMY_USERS.find(u => u.email === email);
     // if(hasUser){
