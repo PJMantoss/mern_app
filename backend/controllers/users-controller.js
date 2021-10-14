@@ -19,7 +19,7 @@ const getUsers = (req, res, next) => {
     res.json({ users: DUMMY_USERS })
 };
 
-const signup = (req, res, next) => {
+const signup = async (req, res, next) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
         console.log(errors);
@@ -37,8 +37,11 @@ const signup = (req, res, next) => {
     let existingUser;
 
     try{
-        existingUser = User.findOne({});
-    }catch(err){}
+        existingUser = await User.findOne({});
+    }catch(err){
+        const error = httpError('Signup failed. Please try again', 500);
+        next(error);
+    }
 
     const createdUser = {
         id: uuidv4(),
