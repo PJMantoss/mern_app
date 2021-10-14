@@ -63,7 +63,7 @@ const signup = async (req, res, next) => {
         places
     })
 
-    DUMMY_USERS.push(createdUser);
+    // DUMMY_USERS.push(createdUser);
 
     res.status(201).json({ user: createdUser })
 };
