@@ -21,7 +21,7 @@ const getUsers = async (req, res, next) => {
     let users;
 
     try{
-        users = await User.findOne({ email: email });
+        users = await User.find({}, '-password');
     }catch(err){
         const error = new httpError('Signup failed. Please try again', 500);
         return next(error);
