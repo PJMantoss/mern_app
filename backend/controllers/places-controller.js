@@ -1,5 +1,7 @@
 const httpError = require('../models/http-error');
 
+const mongoose = require('mongoose');
+
 const { validationResult } = require('express-validator');
 
 const getCoordsForAddress = require('../util/location');
