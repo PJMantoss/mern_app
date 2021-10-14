@@ -68,11 +68,11 @@ const signup = async (req, res, next) => {
     try{
         await createdUser.save();
     }catch(err){
-        const error = new httpError("User Sign Up failed, Please try again.", 500)
+        const error = new httpError("Sign Up failed, Please try again.", 500)
         return next(error);
     }
 
-    res.status(201).json({ user: createdUser })
+    res.status(201).json({ user: createdUser.toObject({ getters: true }) })
 };
 
 const login = (req, res, next) => {
