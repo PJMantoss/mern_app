@@ -29,10 +29,12 @@ const signup = (req, res, next) => {
 
     const { name, email, password } = req.body;
 
-    const hasUser = DUMMY_USERS.find(u => u.email === email);
-    if(hasUser){
-        throw new httpError('User Already Exist', 422);
-    }
+    // const hasUser = DUMMY_USERS.find(u => u.email === email);
+    // if(hasUser){
+    //     throw new httpError('User Already Exist', 422);
+    // }
+
+    const existingUser = User;
 
     const createdUser = {
         id: uuidv4(),
