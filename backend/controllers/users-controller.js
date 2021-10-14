@@ -43,6 +43,11 @@ const signup = async (req, res, next) => {
         return next(error);
     }
 
+    if(existingUser){
+        const error = new httpError('User already exist, login instead', 422);
+        return next(error);
+    }
+
     const createdUser = {
         id: uuidv4(),
         name,
