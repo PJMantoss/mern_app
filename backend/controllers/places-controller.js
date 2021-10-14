@@ -120,8 +120,10 @@ const createPlace = async (req, res, next) => {
     }
 
     //if user is existing, store/create a new document or add a place ID to the corresponding user
+    //Transactions & Session: 
+    //Transactions allows you to build multiple operations in isolation. They're build on sessions
      try{
-        await createdPlace.save();
+        const sess =  //session
     }catch(err){
         const error = new httpError("Creating Place failed, please try again.", 500)
         return next(error); //return error to stop code execution
