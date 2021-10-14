@@ -8,6 +8,8 @@ const {v4: uuidv4} = require('uuid');
 
 const Place = require('../models/place');
 
+const User = require('../models/user');
+
 let DUMMY_PLACES = [
     {
         id: 'p1',
@@ -100,6 +102,8 @@ const createPlace = async (req, res, next) => {
         location: coordinates,
         creator
      });
+
+     //check if the userId provided exist already
 
      try{
          await createdPlace.save();
