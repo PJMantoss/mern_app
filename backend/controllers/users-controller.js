@@ -39,7 +39,7 @@ const signup = async (req, res, next) => {
         return next(new httpError("Invalid inputs. Please check data.", 422));
     }
 
-    const { name, email, password, places } = req.body;
+    const { name, email, password } = req.body;
 
     // const hasUser = DUMMY_USERS.find(u => u.email === email);
     // if(hasUser){
@@ -72,7 +72,7 @@ const signup = async (req, res, next) => {
         email,
         image: 'https://i.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U',
         password,
-        places
+        places: []
     })
 
     // DUMMY_USERS.push(createdUser);
