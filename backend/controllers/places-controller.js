@@ -111,7 +111,13 @@ const createPlace = async (req, res, next) => {
         await createdPlace.save();
     }catch(err){
         const error = new httpError("Creating Place failed, please try again.", 500)
-        return next(error);
+        return next(error); //return error to stop code execution
+    }
+
+    //if user is not in the database
+    if(!user){
+        const error = new httpError("Could not find user for provided ID.", 404)
+        return next(error); //return error to stop code execution
     }
 
      try{
