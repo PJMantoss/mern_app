@@ -129,7 +129,7 @@ const createPlace = async (req, res, next) => {
         //.push() is a method used by mongoose to establish connection between the 2 models (User & Place). it grabs the createdPlace id and adds it to the place field of the User
         user.places.push(createdPlace);
         await user.save({ session: sess });
-        await user.commitTransaction();
+        await sess.commitTransaction();
     }catch(err){
         const error = new httpError("Creating Place failed, please try again.", 500)
         return next(error); //return error to stop code execution
