@@ -88,7 +88,7 @@ const login = (req, res, next) => {
     }
 
     if(!existingUser || existingUser.password !== password){
-        const error = new httpError('User already exist, login instead', 422);
+        const error = new httpError('Invalid credentials, could not login', 401);
         return next(error);
     }
 
