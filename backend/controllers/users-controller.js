@@ -48,12 +48,20 @@ const signup = async (req, res, next) => {
         return next(error);
     }
 
-    const createdUser = {
-        id: uuidv4(),
+    // const createdUser = {
+    //     id: uuidv4(),
+    //     name,
+    //     email,
+    //     password
+    // }
+
+    const createdUser = new User({
         name,
         email,
-        password
-    }
+        image: '',
+        password,
+        places
+    })
 
     DUMMY_USERS.push(createdUser);
 
