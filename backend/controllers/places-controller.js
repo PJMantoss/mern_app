@@ -123,7 +123,7 @@ const createPlace = async (req, res, next) => {
     //Transactions & Session: 
     //Transactions allows you to build multiple operations in isolation. They're build on sessions
      try{
-        const sess =  //session
+        const sess = mongoose.startSession();  //current session that starts when we want to create a new place
     }catch(err){
         const error = new httpError("Creating Place failed, please try again.", 500)
         return next(error); //return error to stop code execution
