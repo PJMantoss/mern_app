@@ -58,7 +58,7 @@ const signup = async (req, res, next) => {
     const createdUser = new User({
         name,
         email,
-        image: '',
+        image: 'https://i.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U',
         password,
         places
     })
