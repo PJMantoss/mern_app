@@ -125,7 +125,7 @@ const createPlace = async (req, res, next) => {
     //Transactions & Session: 
     //Transactions allows you to build multiple operations in isolation. They're build on sessions
      try{
-        const sess = mongoose.startSession();  //current session that starts when we want to create a new place
+        const sess = await mongoose.startSession();  //current session that starts when we want to create a new place
         sess.startTransaction();
         await createdPlace.save({ session: sess });
         //.push() is a method used by mongoose to establish connection between the 2 models (User & Place). it grabs the createdPlace id and adds it to the place field of the User
