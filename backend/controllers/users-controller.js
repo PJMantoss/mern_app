@@ -15,8 +15,18 @@ let DUMMY_USERS = [
     }
 ]
 
-const getUsers = (req, res, next) => {
-    res.json({ users: DUMMY_USERS })
+const getUsers = async (req, res, next) => {
+    // res.json({ users: DUMMY_USERS })
+    
+    let users;
+
+    try{
+        users = await User.findOne({ email: email });
+    }catch(err){
+        const error = new httpError('Signup failed. Please try again', 500);
+        return next(error);
+    }
+
 };
 
 const signup = async (req, res, next) => {
