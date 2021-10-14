@@ -78,11 +78,20 @@ const signup = async (req, res, next) => {
 const login = (req, res, next) => {
     const { email, password } = req.body;
 
-    const identifiedUser = DUMMY_USERS.find(u => u.email === email);
+    let existingUser;
 
-    if(!identifiedUser || identifiedUser.password !== password){
-        throw new httpError('Wrong Credentials: Could not find user.', 401);
+    try{
+        existingUser = await User.findOne({ email: email });
+    }catch(err){
+        const error = new httpError('Login failed. Please try again', 500);
+        return next(error);
     }
+
+    // const identifiedUser = DUMMY_USERS.find(u => u.email === email);
+
+    // if(!identifiedUser || identifiedUser.password !== password){
+    //     throw new httpError('Wrong Credentials: Could not find user.', 401);
+    // }
 
     res.json({ message: "User Logged In" })
 };
