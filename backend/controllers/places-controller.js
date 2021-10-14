@@ -105,10 +105,19 @@ const createPlace = async (req, res, next) => {
 
      //check if the userId provided exist already
 
+     let user;
+
+     try{
+        await createdPlace.save();
+    }catch(err){
+        const error = new httpError("Creating Place failed, please try again.", 500)
+        return next(error);
+    }
+
      try{
          await createdPlace.save();
      }catch(err){
-         const error = new httpError("Creating Place failed, try again.", 500)
+         const error = new httpError("Creating Place failed, please try again.", 500)
          return next(error);
      }
 
