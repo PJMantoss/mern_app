@@ -23,7 +23,7 @@ const getUsers = async (req, res, next) => {
     try{
         users = await User.find({}, '-password');
     }catch(err){
-        const error = new httpError('Signup failed. Please try again', 500);
+        const error = new httpError('Fetching users failed. Please try again', 500);
         return next(error);
     }
 
