@@ -103,29 +103,29 @@ const createPlace = async (req, res, next) => {
         creator
      });
 
-     //check if the userId provided exist already
-
+     //check if the userId provided already exist
      let user;
 
+     try{
+        user = await User.findById(creator);
+    }catch(err){
+        const error = new httpError("Creating Place failed, please try again.", 500)
+        return next(error);
+    }
+
+     //if user is not in the database
+    if(!user){
+        const error = new httpError("Could not find user for provided ID.", 404)
+        return next(error); //return error to stop code execution
+    }
+
+    //if user is existing, store/create a new document or add a place ID to the corresponding user
      try{
         await createdPlace.save();
     }catch(err){
         const error = new httpError("Creating Place failed, please try again.", 500)
         return next(error); //return error to stop code execution
     }
-
-    //if user is not in the database
-    if(!user){
-        const error = new httpError("Could not find user for provided ID.", 404)
-        return next(error); //return error to stop code execution
-    }
-
-     try{
-         user = await User.findById(creator);
-     }catch(err){
-         const error = new httpError("Creating Place failed, please try again.", 500)
-         return next(error);
-     }
 
     // DUMMY_PLACES.push(createdPlace); 
     // or DUMMY_PLACES.unshift(createdPlace) if it's to be added as the first item
