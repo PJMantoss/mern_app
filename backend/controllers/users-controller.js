@@ -87,6 +87,11 @@ const login = (req, res, next) => {
         return next(error);
     }
 
+    if(!existingUser || existingUser.password !== password){
+        const error = new httpError('User already exist, login instead', 422);
+        return next(error);
+    }
+
     // const identifiedUser = DUMMY_USERS.find(u => u.email === email);
 
     // if(!identifiedUser || identifiedUser.password !== password){
