@@ -34,7 +34,11 @@ const signup = (req, res, next) => {
     //     throw new httpError('User Already Exist', 422);
     // }
 
-    const existingUser = User;
+    let existingUser;
+
+    try{
+        existingUser = User.findOne({});
+    }catch(err){}
 
     const createdUser = {
         id: uuidv4(),
