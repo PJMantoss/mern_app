@@ -37,7 +37,7 @@ const signup = async (req, res, next) => {
     let existingUser;
 
     try{
-        existingUser = await User.findOne({});
+        existingUser = await User.findOne({ email: email });
     }catch(err){
         const error = new httpError('Signup failed. Please try again', 500);
         return next(error);
