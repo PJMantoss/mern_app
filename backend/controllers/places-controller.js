@@ -125,14 +125,14 @@ const createPlace = async (req, res, next) => {
 
     //if user is existing, store/create a new document or add a place ID to the corresponding user
     //Transactions & Session: 
-    //Transactions allows you to build multiple operations in isolation. They're build on sessions
+    //Transactions allow you to build multiple operations in isolation. They're build on sessions
     let sess; 
     try{
         sess = await mongoose.startSession();  //current session that starts when we want to create a new place
         sess.startTransaction();
         await createdPlace.save({ session: sess });
-        //.push() is a method used by mongoose to establish connection between the 2 models (User & Place). it grabs the createdPlace id and adds it to the place field of the User
         user.places.push(createdPlace);
+        //.push() is a method used by mongoose to establish connection between the 2 models (User & Place). it grabs the createdPlace id and adds it to the place field of the User
         await user.save({ session: sess });
         await sess.commitTransaction();
     }catch(err){
@@ -207,8 +207,12 @@ const deletePlace = async (req, res, next) => {
         return next(error);
     }
 
+    let sess;
+
     try{
-        await place.remove();
+        sess = await mongoose.startSession();
+        sess.startTransaction();
+        await place.remove({ session: sess });
     }catch(err){
         const error = new httpError('Error! Could not delete place.', 500);
         return next(error);
