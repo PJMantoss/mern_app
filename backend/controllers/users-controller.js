@@ -6,14 +6,14 @@ const {v4: uuidv4} = require('uuid');
 
 const User = require('../models/user');
 
-let DUMMY_USERS = [
-    {
-        id: 'u1',
-        name: "PJ Toss",
-        email: 'pj@example.com',
-        password: 'passing'
-    }
-]
+// let DUMMY_USERS = [
+//     {
+//         id: 'u1',
+//         name: "PJ Toss",
+//         email: 'pj@example.com',
+//         password: 'passing'
+//     }
+// ]
 
 const getUsers = async (req, res, next) => {
     // res.json({ users: DUMMY_USERS })
