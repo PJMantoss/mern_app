@@ -213,7 +213,7 @@ const deletePlace = async (req, res, next) => {
         sess = await mongoose.startSession();
         sess.startTransaction();
         await place.remove({ session: sess });
-        place.creator.places.pull(place);
+        place.creator.places.pull(place); //pull() automatically remove an ID
         await sess.commitTransaction();
     }catch(err){
         const error = new httpError('Error! Could not delete place.', 500);
