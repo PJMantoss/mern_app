@@ -51,7 +51,13 @@ const Auth = () => {
     const authSubmitHandler = e => {
         e.preventDefault();
         //console.log(formState.inputs); 
-        fetch('http://localhost:5000/api/users/signup') //HTTP Request to the backend
+        fetch('http://localhost:5000/api/users/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({})
+        }) //HTTP Request to the backend
         auth.login();
     }
 
