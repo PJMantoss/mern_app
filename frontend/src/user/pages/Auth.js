@@ -67,7 +67,7 @@ const Auth = () => {
                         email: formState.inputs.email.value,
                         password: formState.inputs.password.value
                     })
-        }) //HTTP Request to the backend
+                }) //HTTP Request to the backend
             }catch(err){
                 console.log(err)
             }
