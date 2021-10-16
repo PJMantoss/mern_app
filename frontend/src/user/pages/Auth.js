@@ -56,7 +56,11 @@ const Auth = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({})
+            body: JSON.stringify({
+                name: formState.inputs.name.value,
+                email:
+                password
+            })
         }) //HTTP Request to the backend
         auth.login();
     }
