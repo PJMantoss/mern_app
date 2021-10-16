@@ -67,7 +67,9 @@ const Auth = () => {
                         email: formState.inputs.email.value,
                         password: formState.inputs.password.value
                     })
-                }) //HTTP Request to the backend
+                }); //HTTP Request to the backend
+
+                const responseData = await response.json();
             }catch(err){
                 console.log(err)
             }
