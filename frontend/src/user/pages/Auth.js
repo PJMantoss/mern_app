@@ -70,6 +70,8 @@ const Auth = () => {
                 }); //HTTP Request to the backend
 
                 const responseData = await response.json();
+
+                console.log(responseData);
             }catch(err){
                 console.log(err)
             }
