@@ -50,7 +50,8 @@ const Auth = () => {
 
     const loginSubmitHandler = e => {
         e.preventDefault();
-        console.log(formState.inputs); //Send these info to the backend
+        console.log(formState.inputs); 
+        fetch('http://localhost:5000/api/users') //Send these info to the backend
         auth.login();
     }
 
