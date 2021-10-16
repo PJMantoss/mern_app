@@ -48,7 +48,7 @@ const Auth = () => {
         setIsLoginMode(prevMode => !prevMode)
     };
 
-    const loginSubmitHandler = e => {
+    const authSubmitHandler = e => {
         e.preventDefault();
         //console.log(formState.inputs); 
         fetch('http://localhost:5000/api/users/signup') //HTTP Request. Send these info to the backend
@@ -59,7 +59,7 @@ const Auth = () => {
         <Card className="authentication">
             <h2>Login Required</h2>
             <hr />
-            <form onSubmit={loginSubmitHandler}>
+            <form onSubmit={authSubmitHandler}>
                 {!isLoginMode && (
                     <Input 
                         id="name" 
