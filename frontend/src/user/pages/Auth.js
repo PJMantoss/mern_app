@@ -58,8 +58,8 @@ const Auth = () => {
             },
             body: JSON.stringify({
                 name: formState.inputs.name.value,
-                email:
-                password
+                email: formState.inputs.email.value,
+                password: formState.inputs.password.value
             })
         }) //HTTP Request to the backend
         auth.login();
