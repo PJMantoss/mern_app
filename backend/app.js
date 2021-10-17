@@ -15,6 +15,12 @@ const httpError = require('./models/http-error');
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+    res.setHeader('');
+    res.setHeader('');
+    next();
+})
+
 //middlewares
 app.use('/api/places', placesRoutes);
 
