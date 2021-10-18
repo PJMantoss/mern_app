@@ -57,6 +57,8 @@ const Auth = () => {
         //console.log(formState.inputs); 
 
         setIsLoading(true);
+
+        setError(null);
         
         if(isLoginMode){
             let response;
