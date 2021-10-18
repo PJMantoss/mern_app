@@ -79,12 +79,12 @@ const Auth = () => {
                 console.log(responseData);
             }catch(err){
                 console.log(err)
-                setError(err.message || 'Something went wrong, please try again')
+                setError(err.message || 'Something went wrong, please try again.')
             }
         }
+        setIsLoading(false);
 
         auth.login();
-        setIsLoading(false);
     }
 
     return (
