@@ -95,9 +95,13 @@ const Auth = () => {
         }
     }
 
+    const errorHandler = () => {
+        setError(null);
+    }
+
     return (
         <React.Fragment>
-            <ErrorModal error={error} />
+            <ErrorModal error={error} onClear={errorHandler} />
             <Card className="authentication">
                 {isLoading && <LoadingSpinner asOverlay />}
                 <h2>Login Required</h2>
