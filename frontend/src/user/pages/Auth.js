@@ -66,7 +66,6 @@ const Auth = () => {
                          'Content-Type': 'application/json'
                      },
                      body: JSON.stringify({
-                         name: formState.inputs.name.value,
                          email: formState.inputs.email.value,
                          password: formState.inputs.password.value
                      })
@@ -77,8 +76,6 @@ const Auth = () => {
                  if(!response.ok){
                      throw new Error(responseData.message);
                  }
- 
-                 console.log(responseData);
  
                  setIsLoading(false);
  
@@ -113,7 +110,7 @@ const Auth = () => {
                     throw new Error(responseData.message);
                 }
 
-                console.log(responseData);
+                //console.log(responseData);
 
                 setIsLoading(false);
 
