@@ -12,6 +12,8 @@ const Auth = () => {
     const auth = useContext(AuthContext);
 
     const [isLoginMode, setIsLoginMode] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
+    const [] = useState();
 
 //Use the following methods from the useForm custom Hook
     const [formState, inputHandler, setFormData] = useForm(
