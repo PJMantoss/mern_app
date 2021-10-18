@@ -96,50 +96,52 @@ const Auth = () => {
     }
 
     return (
-        <Card className="authentication">
-            {isLoading && <LoadingSpinner asOverlay />}
-            <h2>Login Required</h2>
-            <hr />
-            <form onSubmit={authSubmitHandler}>
-                {!isLoginMode && (
+        <React.Fragment>
+            <Card className="authentication">
+                {isLoading && <LoadingSpinner asOverlay />}
+                <h2>Login Required</h2>
+                <hr />
+                <form onSubmit={authSubmitHandler}>
+                    {!isLoginMode && (
+                        <Input 
+                            id="name" 
+                            element="input" 
+                            type="text" 
+                            label="Name" 
+                            validators={[VALIDATOR_REQUIRE()]}
+                            errorText="Please enter your name."
+                            onInput={inputHandler}
+                        />
+                    )}
                     <Input 
-                        id="name" 
+                        id="email"
                         element="input" 
-                        type="text" 
-                        label="Name" 
-                        validators={[VALIDATOR_REQUIRE()]}
-                        errorText="Please enter your name."
+                        type="email" 
+                        label="E-Mail" 
+                        validators={[VALIDATOR_EMAIL()]}
+                        errorText="Please enter a valid e-mail."
                         onInput={inputHandler}
                     />
-                )}
-                <Input 
-                    id="email"
-                    element="input" 
-                    type="email" 
-                    label="E-Mail" 
-                    validators={[VALIDATOR_EMAIL()]}
-                    errorText="Please enter a valid e-mail."
-                    onInput={inputHandler}
-                />
 
-                <Input 
-                    id="password"
-                    element="input" 
-                    type="password" 
-                    label="Password" 
-                    validators={[VALIDATOR_MINLENGTH(6)]}
-                    errorText="Password should be at least 6 characters long."
-                    onInput={inputHandler}
-                />
+                    <Input 
+                        id="password"
+                        element="input" 
+                        type="password" 
+                        label="Password" 
+                        validators={[VALIDATOR_MINLENGTH(6)]}
+                        errorText="Password should be at least 6 characters long."
+                        onInput={inputHandler}
+                    />
 
-                <Button type="submit" disabled={!formState.isValid}>
-                    {isLoginMode ? "LOGIN" : "SIGN UP"}
+                    <Button type="submit" disabled={!formState.isValid}>
+                        {isLoginMode ? "LOGIN" : "SIGN UP"}
+                    </Button>
+                </form>
+                <Button inverse onClick={switchModeHandler}>
+                    SWITCH TO {isLoginMode ? "SIGN UP" : "LOGIN"}
                 </Button>
-            </form>
-            <Button inverse onClick={switchModeHandler}>
-                SWITCH TO {isLoginMode ? "SIGN UP" : "LOGIN"}
-            </Button>
-        </Card>
+            </Card>
+        </React.Fragment>
     );
 }
 
