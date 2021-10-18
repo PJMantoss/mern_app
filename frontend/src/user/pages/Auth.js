@@ -55,10 +55,10 @@ const Auth = () => {
     const authSubmitHandler = async (e) => {
         e.preventDefault();
         //console.log(formState.inputs); 
+
+        setIsLoading(true);
         
         if(isLoginMode){}else{
-
-            setIsLoading(true);
             setError(null);
 
             let response;
