@@ -57,6 +57,7 @@ const Auth = () => {
         if(isLoginMode){}else{
 
             setIsLoading(true);
+            setError(null);
 
             let response;
 
@@ -78,6 +79,7 @@ const Auth = () => {
                 console.log(responseData);
             }catch(err){
                 console.log(err)
+                setError(err.message || 'Something went wrong, please try again')
             }
         }
 
