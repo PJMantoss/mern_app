@@ -77,14 +77,15 @@ const Auth = () => {
                 const responseData = await response.json();
 
                 console.log(responseData);
+
+                setIsLoading(false);
+
+                auth.login();
             }catch(err){
                 console.log(err)
                 setError(err.message || 'Something went wrong, please try again.')
             }
         }
-        setIsLoading(false);
-
-        auth.login();
     }
 
     return (
