@@ -59,6 +59,7 @@ const Auth = () => {
         setIsLoading(true);
         
         if(isLoginMode){
+            let response;
             try{
                 response = await fetch('http://localhost:5000/api/users/login', {
                      method: 'POST',
