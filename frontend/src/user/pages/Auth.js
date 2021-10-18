@@ -56,6 +56,8 @@ const Auth = () => {
         
         if(isLoginMode){}else{
 
+            setIsLoading(true);
+
             let response;
 
             try{
@@ -80,6 +82,7 @@ const Auth = () => {
         }
 
         auth.login();
+        setIsLoading(false);
     }
 
     return (
