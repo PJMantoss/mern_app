@@ -87,11 +87,7 @@ const Auth = () => {
                  setError(err.message || 'Something went wrong, please try again.')
              }
         }else{
-
-            setError(null);
-
             let response;
-
             try{
                response = await fetch('http://localhost:5000/api/users/signup', {
                     method: 'POST',
