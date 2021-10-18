@@ -83,6 +83,7 @@ const Auth = () => {
                 auth.login();
             }catch(err){
                 console.log(err)
+                setIsLoading(false);
                 setError(err.message || 'Something went wrong, please try again.')
             }
         }
