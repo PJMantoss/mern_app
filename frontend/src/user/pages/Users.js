@@ -8,9 +8,13 @@ const Users = () => {
 
     useEffect(() => {
         const sendRequest = async () => {
-            const response = await fetch('http://localhost:5000/api/users');
+            try{
+                const response = await fetch('http://localhost:5000/api/users');
 
-            const responseData = response.json();
+                const responseData = response.json();
+            }catch(err){
+                setError(err.message)
+            }
         };
 
         sendRequest();
