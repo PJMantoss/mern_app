@@ -4,7 +4,11 @@ import UsersList from '../components/UsersList';
 const Users = () => {
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/users')
+        const sendRequest = async () => {
+            const response = await fetch('http://localhost:5000/api/users');
+
+            const responseData = response.json();
+        }
     }, [])
 
 //     const USERS = [
