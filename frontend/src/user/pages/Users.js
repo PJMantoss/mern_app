@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import UsersList from '../components/UsersList';
+import ErrorModal from '../../shared/components/UIElements/ErrorModal';
+import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 
 const Users = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -29,6 +31,10 @@ const Users = () => {
 
         sendRequest();
     }, [])
+
+    const errorHandler = () => {
+        setError(null);
+    }
 
 //     const USERS = [
 //     {
