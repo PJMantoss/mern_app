@@ -45,7 +45,12 @@ const Users = () => {
 //     }
 // ]
 
-    return <UsersList users={USERS} />
+    return(
+        <React.Fragment>
+            <ErrorModal error={error} onClear={errorHandler} />
+            <UsersList items={loadedUsers} />
+        </React.Fragment>
+    )
 };
 
 export default Users;
