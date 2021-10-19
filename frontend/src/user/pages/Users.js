@@ -23,9 +23,10 @@ const Users = () => {
 
                 setIsLoading(false);
             }catch(err){
-                setIsLoading(false);
                 setError(err.message);
             }
+
+            setIsLoading(false);
         };
 
         sendRequest();
