@@ -3,6 +3,10 @@ import UsersList from '../components/UsersList';
 
 const Users = () => {
 
+    useEffect(() => {
+        fetch('http://localhost:5000/api/users')
+    }, [])
+
 //     const USERS = [
 //     {
 //         id: 'u1',
