@@ -20,8 +20,6 @@ const Users = () => {
                 }
 
                 setLoadedUsers(responseData.users);
-
-                setIsLoading(false);
             }catch(err){
                 setError(err.message);
             }
