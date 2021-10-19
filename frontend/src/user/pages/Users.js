@@ -48,6 +48,11 @@ const Users = () => {
     return(
         <React.Fragment>
             <ErrorModal error={error} onClear={errorHandler} />
+            {isLoading && (
+                <div className="center">
+                    <LoadingSpinner />
+                </div>
+            )}
             <UsersList items={loadedUsers} />
         </React.Fragment>
     )
