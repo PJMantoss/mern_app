@@ -15,6 +15,10 @@ const Users = () => {
 
                 const responseData = response.json();
 
+                if(!response.ok){
+                    throw new Error(responseData.message);
+                }
+
                 setLoadedUsers(responseData.users);
 
                 setIsLoading(false);
