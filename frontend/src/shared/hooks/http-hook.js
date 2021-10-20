@@ -9,6 +9,12 @@ const useHttpClient = () => {
             method,
             body,
             headers
-        })
+        });
+
+        const responseData = await response.json();
+                 
+        if(!response.ok){
+            throw new Error(responseData.message);
+        }
     }
 };

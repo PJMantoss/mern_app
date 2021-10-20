@@ -71,12 +71,6 @@ const Auth = () => {
                      })
                  }); //HTTP Request to the backend
  
-                 const responseData = await response.json();
-                 
-                 if(!response.ok){
-                     throw new Error(responseData.message);
-                 }
- 
                  setIsLoading(false);
  
                  auth.login();
