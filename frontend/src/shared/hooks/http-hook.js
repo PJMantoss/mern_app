@@ -25,5 +25,5 @@ const useHttpClient = () => {
     
             setIsLoading(false);
         }, []
-    )
+    );
 };
