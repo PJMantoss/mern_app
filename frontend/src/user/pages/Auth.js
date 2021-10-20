@@ -12,9 +12,6 @@ import './Auth.css'
 
 const Auth = () => {
     const auth = useContext(AuthContext);
-
-    const [isLoginMode, setIsLoginMode] = useState(true);
-    const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState();
 
 //Use the following methods from the useForm custom Hook

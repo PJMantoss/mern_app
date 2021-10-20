@@ -1,3 +1,6 @@
 import { useState } from 'react';
 
-const httpClient = () => {};
+const useHttpClient = () => {
+    const [isLoginMode, setIsLoginMode] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
+};
