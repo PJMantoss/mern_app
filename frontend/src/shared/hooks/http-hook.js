@@ -9,13 +9,14 @@ const useHttpClient = () => {
     const sendRequest = useCallback(
         async (url, method = 'GET', body = 'null', headers = {}) => {
             setIsLoading(true);
-            const httpAbortCtlr = new AbortController();
-            activeHttpRequests.current.push(httpAbortCtlr);
+            const httpAbortCtrl = new AbortController();
+            activeHttpRequests.current.push(httpAbortCtrl);
             try{
                 const response = await fetch(url, {
                     method,
                     body,
-                    headers
+                    headers,
+                    signal: httpAbortCtrl.signal
                 });
         
                 const responseData = await response.json();
