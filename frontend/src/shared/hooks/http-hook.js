@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 
 const useHttpClient = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -33,7 +33,13 @@ const useHttpClient = () => {
 
     const clearError = () => {
         setError(null);
-    }
+    };
+
+    useEffect(() => {
+        return () => {
+            activeHttpRequests.current.forEach(abortCtrl => abortCtrl.abort())
+        }
+    }, [])
 
     return { isLoading, error, sendRequest }
 };
