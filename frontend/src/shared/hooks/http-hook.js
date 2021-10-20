@@ -1,12 +1,16 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 
 const useHttpClient = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState();
 
+    const activeHttpRequests = useRef([]);
+
     const sendRequest = useCallback(
         async (url, method = 'GET', body = 'null', headers = {}) => {
             setIsLoading(true);
+            const httpAbortCtlr = new AbortController();
+            activeHttpRequests.current.push(httpAbortCtlr);
             try{
                 const response = await fetch(url, {
                     method,
