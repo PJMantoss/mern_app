@@ -26,4 +26,6 @@ const useHttpClient = () => {
             setIsLoading(false);
         }, []
     );
+
+    return { isLoading, error, sendRequest }
 };
