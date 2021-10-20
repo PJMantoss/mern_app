@@ -6,7 +6,9 @@ const useHttpClient = () => {
 
     const sendRequest = (url, method = 'GET', body = 'null', headers = {}) => {
         fetch(url, {
-            method
+            method,
+            body,
+            headers
         })
     }
 };
