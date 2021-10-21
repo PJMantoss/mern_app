@@ -57,7 +57,8 @@ const Auth = () => {
         //console.log(formState.inputs); 
         
         if(isLoginMode){          
-              const  responseData = await sendRequest(
+              try{
+                await sendRequest(
                     'http://localhost:5000/api/users/login', 
                     'POST', 
                     JSON.stringify({
@@ -68,8 +69,12 @@ const Auth = () => {
                     'Content-Type': 'application/json'
                 }
               ); //HTTP Request to the backend
- 
-                 auth.login();
+
+              }catch(err){
+
+              };
+
+              auth.login();
              
         }else{
             let response;
