@@ -59,27 +59,23 @@ const Auth = () => {
         setError(null);
         
         if(isLoginMode){
-            let response;
-            try{
-                response = await sendRequest('http://localhost:5000/api/users/login', 'POST', JSON.stringify({
+            
+              const  responseData = await sendRequest(
+                    'http://localhost:5000/api/users/login', 
+                    'POST', 
+                    JSON.stringify({
                     email: formState.inputs.email.value,
                     password: formState.inputs.password.value
-                }),{
-                     method: 'POST',
-                     headers: {
-                         'Content-Type': 'application/json'
-                     },
-                     body: 
-                 }); //HTTP Request to the backend
+                }),
+                {
+                    'Content-Type': 'application/json'
+                }
+              ); //HTTP Request to the backend
  
-                 setIsLoading(false);
+                
  
                  auth.login();
-             }catch(err){
-                 console.log(err)
-                 setIsLoading(false);
-                 setError(err.message || 'Something went wrong, please try again.')
-             }
+             
         }else{
             let response;
             try{
