@@ -61,15 +61,15 @@ const Auth = () => {
         if(isLoginMode){
             let response;
             try{
-                response = await sendRequest('http://localhost:5000/api/users/login', {
+                response = await sendRequest('http://localhost:5000/api/users/login', 'POST', JSON.stringify({
+                    email: formState.inputs.email.value,
+                    password: formState.inputs.password.value
+                }),{
                      method: 'POST',
                      headers: {
                          'Content-Type': 'application/json'
                      },
-                     body: JSON.stringify({
-                         email: formState.inputs.email.value,
-                         password: formState.inputs.password.value
-                     })
+                     body: 
                  }); //HTTP Request to the backend
  
                  setIsLoading(false);
