@@ -55,11 +55,9 @@ const Auth = () => {
     const authSubmitHandler = async (e) => {
         e.preventDefault();
         //console.log(formState.inputs); 
-
-        setError(null);
         
         if(isLoginMode){
-            
+           
               const  responseData = await sendRequest(
                     'http://localhost:5000/api/users/login', 
                     'POST', 
@@ -71,8 +69,6 @@ const Auth = () => {
                     'Content-Type': 'application/json'
                 }
               ); //HTTP Request to the backend
- 
-                
  
                  auth.login();
              
