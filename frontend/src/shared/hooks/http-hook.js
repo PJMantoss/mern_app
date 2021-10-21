@@ -26,6 +26,7 @@ const useHttpClient = () => {
                 }
             }catch(err){
                 setError(err.message);
+                throw err;
             }
     
             setIsLoading(false);
