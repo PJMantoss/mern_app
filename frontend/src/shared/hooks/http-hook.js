@@ -7,10 +7,11 @@ const useHttpClient = () => {
     const activeHttpRequests = useRef([]);
 
     const sendRequest = useCallback(
-        async (url, method = 'GET', body = 'null', headers = {}) => {
+        async (url, method = 'GET', body = null, headers = {}) => {
             setIsLoading(true);
             const httpAbortCtrl = new AbortController();
             activeHttpRequests.current.push(httpAbortCtrl);
+
             try{
                 const response = await fetch(url, {
                     method,
@@ -32,10 +33,10 @@ const useHttpClient = () => {
 
             }catch(err){
                 setError(err.message);
+                setIsLoading(false);
                 throw err;
             }
     
-            setIsLoading(false);
         }, []
     );
 
@@ -47,9 +48,7 @@ const useHttpClient = () => {
         return () => {
             activeHttpRequests.current.forEach(abortCtrl => abortCtrl.abort())
         }
-    }, [])
+    }, []);
 
-    return { isLoading, error, sendRequest }
+    return { isLoading, error, sendRequest, clearError };
 };
-
-export default useHttpClient;
