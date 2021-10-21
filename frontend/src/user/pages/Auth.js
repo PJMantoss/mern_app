@@ -56,8 +56,7 @@ const Auth = () => {
         e.preventDefault();
         //console.log(formState.inputs); 
         
-        if(isLoginMode){
-           
+        if(isLoginMode){          
               const  responseData = await sendRequest(
                     'http://localhost:5000/api/users/login', 
                     'POST', 
