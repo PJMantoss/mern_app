@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import Input from '../../shared/components/FormElements/Input';
 import { VALIDATOR_EMAIL, VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from '../../shared/util/validators';
 import { useForm } from '../../shared/hooks/form-hook'; 
+import { useHttpClient } from '../../shared/hooks/http-hook';
 import Button from '../../shared/components/FormElements/Button';
 import Card from '../../shared/components/UIElements/Card';
 import { AuthContext } from '../../shared/context/auth-context';
@@ -13,6 +14,8 @@ import './Auth.css'
 const Auth = () => {
     const auth = useContext(AuthContext);
     const [isLoginMode, setIsLoginMode] = useState(true);
+
+    const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
 //Use the following methods from the useForm custom Hook
     const [formState, inputHandler, setFormData] = useForm(
@@ -53,14 +56,12 @@ const Auth = () => {
         e.preventDefault();
         //console.log(formState.inputs); 
 
-        setIsLoading(true);
-
         setError(null);
         
         if(isLoginMode){
             let response;
             try{
-                response = await fetch('http://localhost:5000/api/users/login', {
+                response = await sendRequest('http://localhost:5000/api/users/login', {
                      method: 'POST',
                      headers: {
                          'Content-Type': 'application/json'
