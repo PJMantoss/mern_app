@@ -79,17 +79,18 @@ const Auth = () => {
         }else{
             let response;
             try{
-               response = await fetch('http://localhost:5000/api/users/signup', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        name: formState.inputs.name.value,
-                        email: formState.inputs.email.value,
-                        password: formState.inputs.password.value
-                    })
-                }); //HTTP Request to the backend
+                await sendRequest(
+                    'http://localhost:5000/api/users/signup', 
+                    'POST', 
+                    JSON.stringify({
+                    name: formState.inputs.name.value,
+                    email: formState.inputs.email.value,
+                    password: formState.inputs.password.value
+                }),
+                {
+                    'Content-Type': 'application/json'
+                }
+              ); //HTTP Request to the backend
 
                 const responseData = await response.json();
                 
