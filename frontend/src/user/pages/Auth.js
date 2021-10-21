@@ -94,19 +94,10 @@ const Auth = () => {
 
                 const responseData = await response.json();
                 
-                if(!response.ok){
-                    throw new Error(responseData.message);
-                }
-
-                //console.log(responseData);
-
-                setIsLoading(false);
-
                 auth.login();
+
             }catch(err){
-                console.log(err)
-                setIsLoading(false);
-                setError(err.message || 'Something went wrong, please try again.')
+                
             }
         }
     }
