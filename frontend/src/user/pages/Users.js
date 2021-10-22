@@ -24,10 +24,6 @@ const Users = () => {
         fetchUsers();
     }, [sendRequest])
 
-    const errorHandler = () => {
-        setError(null);
-    }
-
 //     const USERS = [
 //     {
 //         id: 'u1',
@@ -39,7 +35,7 @@ const Users = () => {
 
     return(
         <React.Fragment>
-            <ErrorModal error={error} onClear={errorHandler} />
+            <ErrorModal error={error} onClear={clearError} />
             {isLoading && (
                 <div className="center">
                     <LoadingSpinner />
