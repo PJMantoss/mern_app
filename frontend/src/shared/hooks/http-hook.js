@@ -1,6 +1,8 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 
-const useHttpClient = () => {
+const AbortController = window.AbortController;
+
+export const useHttpClient = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState();
 
