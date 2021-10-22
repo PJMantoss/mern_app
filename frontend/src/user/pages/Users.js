@@ -12,24 +12,17 @@ const Users = () => {
         const fetchUsers = async () => {
             
             try{
-                const response = await sendRequest('http://localhost:5000/api/users');
-
-                const responseData = await response.json();
-
-                if(!response.ok){
-                    throw new Error(responseData.message);
-                }
+                const responseData = await sendRequest('http://localhost:5000/api/users');
 
                 setLoadedUsers(responseData.users);
-            }catch(err){
-                setError(err.message);
-            }
 
-            setIsLoading(false);
+            }catch(err){
+                
+            }
         };
 
         fetchUsers();
-    }, [])
+    }, [sendRequest])
 
     const errorHandler = () => {
         setError(null);
