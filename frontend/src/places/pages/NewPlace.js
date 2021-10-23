@@ -34,7 +34,12 @@ const NewPlace = () => {
         sendRequest(
             'http://localhost:5000/api/places',
             'POST',
-            JSON.stringify({})
+            JSON.stringify({
+                title: formState.inputs.title.value,
+                description: formState.inputs.description.value,
+                address: formState.inputs.address.value,
+                creator: 
+            })
         ); //Send these info to the backend
     }
 
