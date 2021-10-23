@@ -31,7 +31,11 @@ const NewPlace = () => {
 
     const placeSubmitHandler = e => {
         e.preventDefault();
-         //Send these info to the backend
+        sendRequest(
+            'http://localhost:5000/api/places',
+            'POST',
+            JSON.stringify({})
+        ); //Send these info to the backend
     }
 
     return <form className="place-form" onSubmit={placeSubmitHandler}>
