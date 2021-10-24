@@ -12,13 +12,13 @@ router.get('/user/:uid', placesController.getPlacesByUserId);
 
 router.post(
     '/', 
-    check('title')
+    [check('title')
     .not()
     .isEmpty(), 
     check('description').isLength({ min: 5 }),
     check('address')
     .not()
-    .isEmpty(), 
+    .isEmpty()], 
     placesController.createPlace
     );
 
