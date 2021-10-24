@@ -110,7 +110,10 @@ const login = async (req, res, next) => {
     //     throw new httpError('Wrong Credentials: Could not find user.', 401);
     // }
 
-    res.json({ message: "User Logged In" })
+    res.json({ 
+        message: "User Logged In",
+        user: existingUser.toObject({ getters: true }) 
+    })
 };
 
 exports.getUsers = getUsers;
