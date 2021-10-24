@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router';
 import Input from '../../shared/components/FormElements/Input';
 import Button from '../../shared/components/FormElements/Button';
 import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../shared/util/validators';
@@ -31,7 +32,9 @@ const NewPlace = () => {
             }
         },
         false
-    )
+    );
+
+    const history = useHistory();
 
     const placeSubmitHandler = async e => {
         e.preventDefault();
@@ -48,6 +51,8 @@ const NewPlace = () => {
                 }),
                 { 'Content-Type': 'application/json' }
             ); //Send these info to the backend
+
+            history.push('/'); //Redirects to home page after adding a new place
         }catch(err){}
 
     }
