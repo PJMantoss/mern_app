@@ -31,18 +31,22 @@ const NewPlace = () => {
         false
     )
 
-    const placeSubmitHandler = e => {
+    const placeSubmitHandler = async e => {
         e.preventDefault();
-        sendRequest(
-            'http://localhost:5000/api/places',
-            'POST',
-            JSON.stringify({
-                title: formState.inputs.title.value,
-                description: formState.inputs.description.value,
-                address: formState.inputs.address.value,
-                creator: auth.userId
-            })
-        ); //Send these info to the backend
+
+        try{
+            await sendRequest(
+                'http://localhost:5000/api/places',
+                'POST',
+                JSON.stringify({
+                    title: formState.inputs.title.value,
+                    description: formState.inputs.description.value,
+                    address: formState.inputs.address.value,
+                    creator: auth.userId
+                })
+            ); //Send these info to the backend
+        }catch(err){}
+
     }
 
     return <form className="place-form" onSubmit={placeSubmitHandler}>
