@@ -56,9 +56,11 @@ const Auth = () => {
         e.preventDefault();
         //console.log(formState.inputs); 
         
-        if(isLoginMode){          
+        if(isLoginMode){        
+            let responseData;  
+
               try{
-                const responseData = await sendRequest(
+                responseData = await sendRequest(
                     'http://localhost:5000/api/users/login', 
                     'POST', 
                     JSON.stringify({
@@ -77,9 +79,11 @@ const Auth = () => {
               auth.login(responseData.user.id);
              
         }else{
-            let response;
+
+            let responseData;
+
             try{
-                const responseData = await sendRequest(
+                responseData = await sendRequest(
                     'http://localhost:5000/api/users/signup', 
                     'POST', 
                     JSON.stringify({
@@ -91,8 +95,6 @@ const Auth = () => {
                     'Content-Type': 'application/json'
                 }
               ); //HTTP Request to the backend
-
-                const responseData = await response.json();
                 
                 auth.login(responseData.user.id);
 
