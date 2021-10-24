@@ -45,7 +45,8 @@ const NewPlace = () => {
                     description: formState.inputs.description.value,
                     address: formState.inputs.address.value,
                     creator: auth.userId
-                })
+                }),
+                { 'Content-Type': 'application/json' }
             ); //Send these info to the backend
         }catch(err){}
 
@@ -53,7 +54,9 @@ const NewPlace = () => {
 
     return (
         <React.Fragment>
+            <ErrorModal error={error} onClear={clearError} />
             <form className="place-form" onSubmit={placeSubmitHandler}>
+                {isLoading && <LoadingSpinner asOverlay />}
                 <Input 
                     id="title"
                     element="input" 
