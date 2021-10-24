@@ -74,7 +74,7 @@ const Auth = () => {
 
               };
 
-              auth.login();
+              auth.login(responseData.user.id);
              
         }else{
             let response;
@@ -94,7 +94,7 @@ const Auth = () => {
 
                 const responseData = await response.json();
                 
-                auth.login();
+                auth.login(responseData.user.id);
 
             }catch(err){
 
