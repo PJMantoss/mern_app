@@ -33,9 +33,13 @@ import { useHttpClient } from '../../shared/hooks/http-hook';
 
 const UserPlaces = () => {
     const { isLoading, error, sendRequest, clearError } = useHttpClient();
-    
+
     const userId = useParams().userId;
+
+    useEffect(() => {}, []);
+
     const loadedPlaces = DUMMY_PLACES.filter(place => place.creator === userId);
+    
     return <PlaceList items={loadedPlaces} />
 } 
 
