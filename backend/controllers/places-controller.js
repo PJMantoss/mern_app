@@ -99,9 +99,9 @@ const createPlace = async (req, res, next) => {
     const createdPlace = new Place({
         title,
         description,
-        image: 'https://images.unsplash.com/photo-1538708027031-6955608d3c26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80',
         address,
         location: coordinates,
+        image: 'https://ak.picdn.net/shutterstock/videos/10498112/thumb/1.jpg',
         creator
      });
 
