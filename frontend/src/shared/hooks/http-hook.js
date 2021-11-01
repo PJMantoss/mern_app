@@ -24,7 +24,9 @@ export const useHttpClient = () => {
         
                 const responseData = await response.json();
 
-                activeHttpRequests.current = activeHttpRequests.current.filter(reqCtrl => reqCtrl !== httpAbortCtrl);
+                activeHttpRequests.current = activeHttpRequests.current.filter(
+                    reqCtrl => reqCtrl !== httpAbortCtrl
+                );
                          
                 if(!response.ok){
                     throw new Error(responseData.message);
