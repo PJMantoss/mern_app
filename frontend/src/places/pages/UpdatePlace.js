@@ -5,39 +5,40 @@ import Button from '../../shared/components/FormElements/Button';
 import { VALIDATOR_REQUIRE, VALIDATOR_MINLENGTH } from '../../shared/util/validators';
 import { useForm } from '../../shared/hooks/form-hook';
 import Card from '../../shared/components/UIElements/Card';
+import { useHttpClient } from '../../shared/hooks/http-hook';
 
 import './PlaceForm.css'
 
-const DUMMY_PLACES = [
-    {
-        id: 'p1',
-        title: "Empire State Building",
-        description: 'One of the most famous skycrapers in the world',
-        imageUrl: 'https://images.unsplash.com/photo-1538708027031-6955608d3c26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80',
-        address: '20 W 34th St, New York, NY 10001, USA',
-        location: {
-            lat: 40.7484405,
-            lng: -73.9878584
-        },
-        creator: 'u1'
-    },
+// const DUMMY_PLACES = [
+//     {
+//         id: 'p1',
+//         title: "Empire State Building",
+//         description: 'One of the most famous skycrapers in the world',
+//         imageUrl: 'https://images.unsplash.com/photo-1538708027031-6955608d3c26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80',
+//         address: '20 W 34th St, New York, NY 10001, USA',
+//         location: {
+//             lat: 40.7484405,
+//             lng: -73.9878584
+//         },
+//         creator: 'u1'
+//     },
 
-    {
-        id: 'p2',
-        title: "Emp. State Building",
-        description: 'One of the most famous skycrapers in the world',
-        imageUrl: 'https://images.unsplash.com/photo-1538708027031-6955608d3c26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80',
-        address: '20 W 34th St, New York, NY 10001, USA',
-        location: {
-            lat: 40.7484405,
-            lng: -73.9878584
-        },
-        creator: 'u2'
-    }
-];
+//     {
+//         id: 'p2',
+//         title: "Emp. State Building",
+//         description: 'One of the most famous skycrapers in the world',
+//         imageUrl: 'https://images.unsplash.com/photo-1538708027031-6955608d3c26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80',
+//         address: '20 W 34th St, New York, NY 10001, USA',
+//         location: {
+//             lat: 40.7484405,
+//             lng: -73.9878584
+//         },
+//         creator: 'u2'
+//     }
+// ];
 
 const UpdatePlace = () => {
-    const [isLoading, setIsLoading] = useState(true);
+    const { isLoading, error, sendRequest, clearError } = useHttpClient();
     const placeId = useParams().placeId;
 
     const [formState, inputHandler, setFormData] = useForm(
@@ -54,7 +55,9 @@ const UpdatePlace = () => {
         false
     );
 
-    const identifiedPlace = DUMMY_PLACES.find(p => p.id === placeId)
+    const identifiedPlace
+
+    // const identifiedPlace = DUMMY_PLACES.find(p => p.id === placeId)
 
     useEffect(() => {
         if (identifiedPlace){
