@@ -80,9 +80,9 @@ const getPlacesByUserId = async (req, res, next) => {
 const createPlace = async (req, res, next) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
-        console.log(errors);
-        res.status(422);
-        next(new httpError("Invalid inputs. Please check data.", 422));
+        // console.log(errors);
+        // res.status(422);
+        return next(new httpError("Invalid inputs. Please check data.", 422));
     }
 
     const { title, description, address, creator } = req.body;
@@ -93,7 +93,7 @@ const createPlace = async (req, res, next) => {
     try{
         coordinates = await getCoordsForAddress(address);
     }catch(error){
-        next(error)
+        return next(error)
     }
 
     const createdPlace = new Place({
@@ -126,9 +126,9 @@ const createPlace = async (req, res, next) => {
     //if user is existing, store/create a new document or add a place ID to the corresponding user
     //Transactions & Session: 
     //Transactions allow you to build multiple operations in isolation. They're build on sessions
-    let sess; 
+    
     try{
-        sess = await mongoose.startSession();  //current session that starts when we want to create a new place
+        const sess = await mongoose.startSession();  //current session that starts when we want to create a new place
         sess.startTransaction();
         await createdPlace.save({ session: sess });
         user.places.push(createdPlace);
