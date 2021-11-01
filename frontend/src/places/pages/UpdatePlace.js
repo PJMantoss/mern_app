@@ -39,6 +39,7 @@ import './PlaceForm.css'
 
 const UpdatePlace = () => {
     const { isLoading, error, sendRequest, clearError } = useHttpClient();
+    const [loadedPlaces, setLoadedPlaces] = useState();
     const placeId = useParams().placeId;
 
     const [formState, inputHandler, setFormData] = useForm(
@@ -55,37 +56,51 @@ const UpdatePlace = () => {
         false
     );
 
-    const identifiedPlace
+    useEffect(() => {
+        const fetchRequest = async () => {
+            try{
+                const responseData = await sendRequest(
+                    `http://localhost:5000/api/places/${placeId}`
+                )
+                setLoadedPlaces(responseData.place);
+
+                setFormData({
+                    title: {
+                        value: identifiedPlace.title,
+                        isValid: true
+                    },
+                    description: {
+                        value: identifiedPlace.description,
+                        isValid: true
+                    }
+                }, true);
+            }catch(err){}
+        }
+        fetchRequest();
+    }, [sendRequest, placeId, setFormData])
 
     // const identifiedPlace = DUMMY_PLACES.find(p => p.id === placeId)
-
-    useEffect(() => {
-        if (identifiedPlace){
-            setFormData({
-                title: {
-                    value: identifiedPlace.title,
-                    isValid: true
-                },
-                description: {
-                    value: identifiedPlace.description,
-                    isValid: true
-                }
-            }, true);
-        }
-        
-        setIsLoading(false)
-    }, [setFormData, identifiedPlace])
 
     const placeUpdateSubmitHandler = e => {
         e.preventDefault();
         console.log(formState.inputs); //Send these info to the backend
     }
 
-    if(!identifiedPlace){
+    if(!loadedPlaces){
         return(
             <div className="center">
                 <Card>
                     <h2>Could Not Find Place.</h2>
+                </Card>
+            </div>
+        )
+    }
+
+    if(isLoading){
+        return(
+            <div className="center">
+                <Card>
+                    <h2>Loading...</h2>
                 </Card>
             </div>
         )
