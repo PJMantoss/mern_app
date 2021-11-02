@@ -4,10 +4,12 @@ import Button from '../../shared/components/FormElements/Button';
 import Modal from '../../shared/components/UIElements/Modal';
 import Map from '../../shared/components/UIElements/Map';
 import { AuthContext } from '../../shared/context/auth-context';
+import { useHttpClient } from '../../shared/hooks/http-hook';
 
 import './PlaceItem.css';
 
 const PlaceItem = props => {
+    const { isLoading, error, sendRequest, clearError } = useHttpClient();
     const auth = useContext(AuthContext);
 
     const [showMap, setShowMap] = useState(false);
@@ -27,8 +29,13 @@ const PlaceItem = props => {
 
     const confirmDeleteHandler = () => {
         setShowDeleteModal(false);
-        
-        console.log("DELETE...");
+        try{
+            await sendRequest(
+                `http://localhost:5000/api/places${props.id}`,
+                'DELETE'
+            );
+            props.onDelete();
+        }catch(err){}
     };
 
     return(
