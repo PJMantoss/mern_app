@@ -86,7 +86,7 @@ const UpdatePlace = () => {
 
     // const identifiedPlace = DUMMY_PLACES.find(p => p.id === placeId)
 
-    const placeUpdateSubmitHandler = e => {
+    const placeUpdateSubmitHandler = async e => {
         e.preventDefault();
         try{
             const responseData = await sendRequest(
