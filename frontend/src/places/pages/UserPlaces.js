@@ -55,7 +55,7 @@ const UserPlaces = () => {
     //const loadedPlaces = DUMMY_PLACES.filter(place => place.creator === userId);
 
     const placeDeletedHandler = (deletedPlaceId) => {
-        setLoadedPlaces(prevPlace => prevPlace.filter(
+        setLoadedPlaces(prevPlaces => prevPlaces.filter(
             place => place !== deletedPlaceId
             )
         )
