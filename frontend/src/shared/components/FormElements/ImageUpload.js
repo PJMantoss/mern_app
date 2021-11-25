@@ -4,6 +4,8 @@ import Button from './Button';
 import './ImageUpload.css';
 
 const ImageUpload = props => {
+    const pickImageHandler = () => {};
+
     return (
         <div className="form-control">
             <input 
@@ -16,6 +18,9 @@ const ImageUpload = props => {
                 <div className="image-upload__preview">
                     <img src="" alt="Preview" />
                 </div>
+                <Button type="button" onClick={pickImageHandler}>
+                    Pick Image
+                </Button>
             </div>
         </div>
     )
