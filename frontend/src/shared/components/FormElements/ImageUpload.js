@@ -6,7 +6,9 @@ import './ImageUpload.css';
 const ImageUpload = props => {
     const filePickerRef = useRef();
 
-    const pickedHandler = e => {};
+    const pickedHandler = e => {
+        console.log(e.target);
+    };
 
     const pickImageHandler = () => {
         filePickerRef.current.click();
