@@ -1,9 +1,12 @@
-import React, {useRef} from 'react';
+import React, { useRef, useState } from 'react';
 import Button from './Button';
 
 import './ImageUpload.css';
 
 const ImageUpload = props => {
+    const [file, setFile] = useState();
+    const [previewUrl, setPreviewUrl] = useState();
+
     const filePickerRef = useRef();
 
     const pickedHandler = e => {
