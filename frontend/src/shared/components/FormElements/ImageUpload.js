@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Button from './Button';
 
 import './ImageUpload.css';
@@ -10,17 +10,29 @@ const ImageUpload = props => {
 
     const filePickerRef = useRef();
 
+    useEffect(() => {
+        if(!file){
+            return;
+        }
+        const fileReader = new FileReader();
+        fileReader.onload = () => {};
+        fileReader.readAsDataURL(file);
+    }, [file]);
+
     const pickedHandler = e => {
         let pickedFile;
+        let fileIsValid = isValid;
 
         if(e.target.files && e.target.files.length === 1){
             pickedFile = e.target.files[0];
             setFile(pickedFile);
             setIsValid(true);
+            fileIsValid = true;
         }else{
             setIsValid(false);
+            fileIsValid = false;
         }
-        props.onInput(props.id, pickedFile);
+        props.onInput(props.id, pickedFile, fileIsValid);
     };
 
     const pickImageHandler = () => {
