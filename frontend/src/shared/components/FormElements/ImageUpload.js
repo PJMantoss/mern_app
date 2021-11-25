@@ -17,7 +17,10 @@ const ImageUpload = props => {
             pickedFile = e.target.files[0];
             setFile(pickedFile);
             setIsValid(true);
-        }else{}
+        }else{
+            setIsValid(false);
+        }
+        props.onInput(props.id, pickedFile);
     };
 
     const pickImageHandler = () => {
