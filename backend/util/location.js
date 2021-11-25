@@ -8,6 +8,7 @@ async function getCoordsForAddress(address){
     //     lat: 40.7484405,
     //     lng: -73.9878584
     // }
+    
 //From Google Geocoding API - Geocoding Request & Response
     const response = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${API_KEY}`);
 
@@ -22,5 +23,12 @@ async function getCoordsForAddress(address){
 
     return coordinates;
 }
+
+// const getCoordsForAddress = (address) => {
+//     return {
+//         lat: 31.9913925,
+//         lng: 34.774242
+//     }
+// }
 
 module.exports = getCoordsForAddress;
