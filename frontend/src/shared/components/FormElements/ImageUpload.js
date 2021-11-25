@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import Button from './Button';
 
 import './ImageUpload.css';
 
 const ImageUpload = props => {
+    const filePickerRef = useRef();
+
     const pickImageHandler = () => {};
 
     return (
         <div className="form-control">
             <input 
-                id={props.id} 
+                id={props.id}
+                ref={filePickerRef} 
                 type="file"
                 style={{ display: 'none' }}
                 accept=".jpg,.png,.jpeg" 
