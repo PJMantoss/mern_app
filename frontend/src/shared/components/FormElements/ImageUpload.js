@@ -12,7 +12,11 @@ const ImageUpload = props => {
                 style={{ display: 'none' }}
                 accept=".jpg,.png,.jpeg" 
             />
-            <div className={`image-upload ${props.center && 'center'}`}></div>
+            <div className={`image-upload ${props.center && 'center'}`}>
+                <div className="image-upload__preview">
+                    <img src="" alt="Preview" />
+                </div>
+            </div>
         </div>
     )
 };
