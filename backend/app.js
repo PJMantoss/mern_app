@@ -16,6 +16,8 @@ const httpError = require('./models/http-error');
 
 app.use(express.json());
 
+app.use('/uploads/images', express.static());
+
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(
