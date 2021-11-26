@@ -105,9 +105,7 @@ const Auth = () => {
                 
                 auth.login(responseData.user.id);
 
-            }catch(err){
-
-            }
+            }catch(err){};
         }
     }
 
