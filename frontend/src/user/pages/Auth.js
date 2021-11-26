@@ -65,16 +65,22 @@ const Auth = () => {
         if(isLoginMode){       
 
               try{
+                  const formData = new FormData();
+                  formData.append('email', formState.inputs.email.value);
+                  formData.append('name', formState.inputs.name.value);
+                  formData.append('password', formState.inputs.password.value);
+                  formData.append('image', formState.inputs.image.value);
                 const responseData = await sendRequest(
                     'http://localhost:5000/api/users/login', 
                     'POST', 
-                    JSON.stringify({
-                    email: formState.inputs.email.value,
-                    password: formState.inputs.password.value
-                }),
-                {
-                    'Content-Type': 'application/json'
-                }
+                    formData
+                //     JSON.stringify({
+                //     email: formState.inputs.email.value,
+                //     password: formState.inputs.password.value
+                // }),
+                // {
+                //     'Content-Type': 'application/json'
+                // }
               ); //HTTP Request to the backend
 
               auth.login(responseData.user.id);
