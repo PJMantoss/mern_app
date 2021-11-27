@@ -8,6 +8,7 @@ import { useHttpClient } from '../../shared/hooks/http-hook';
 import { AuthContext } from '../../shared/context/auth-context';
 import ErrorModal from '../../shared/components/UIElements/ErrorModal';
 import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
+import ImageUpload from '../../shared/components/FormElements/ImageUpload';
 
 import './PlaceForm.css'
 
@@ -87,6 +88,7 @@ const NewPlace = () => {
                     errorText="Please enter a valid address."
                     onInput={inputHandler}
                 />
+                <ImageUpload id="image" onInput={inputHandler} errorText="Please provide an image." />
                 <Button type="submit" disabled={!formState.isValid}>
                     ADD PLACE
                 </Button>
