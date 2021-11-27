@@ -101,7 +101,7 @@ const createPlace = async (req, res, next) => {
         description,
         address,
         location: coordinates,
-        image: 'https://ak.picdn.net/shutterstock/videos/10498112/thumb/1.jpg',
+        image: req.file.path,
         creator
      });
 
