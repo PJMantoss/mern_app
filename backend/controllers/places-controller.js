@@ -221,7 +221,11 @@ const deletePlace = async (req, res, next) => {
         return next(error);
     }
 
-    res.status(200).json({ message: "Place Deleted." })
+    fs.unlink(imagePath, err => {
+        console.log(err);
+    })
+
+    res.status(200).json({ message: "Deleted Place." })
 };
 
 exports.getPlaceById = getPlaceById;
