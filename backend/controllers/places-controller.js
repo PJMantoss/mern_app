@@ -149,7 +149,7 @@ const createPlace = async (req, res, next) => {
 const updatePlace = async (req, res, next) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
-        return(new httpError('Invalids inputs passed, please check your data.', 422));
+        return next(new httpError('Invalids inputs passed, please check your data.', 422));
     }
 
     const { title, description } = req.body;
@@ -207,10 +207,10 @@ const deletePlace = async (req, res, next) => {
         return next(error);
     }
 
-    let sess;
+    const imagePath = place.image;
 
     try{
-        sess = await mongoose.startSession();
+        const sess = await mongoose.startSession();
         sess.startTransaction();
         await place.remove({ session: sess });
         place.creator.places.pull(place); //pull() automatically remove an ID
