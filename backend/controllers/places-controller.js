@@ -214,7 +214,7 @@ const deletePlace = async (req, res, next) => {
         sess.startTransaction();
         await place.remove({ session: sess });
         place.creator.places.pull(place); //pull() automatically remove an ID
-        place.creator.save({ session: sess });
+        await place.creator.save({ session: sess });
         await sess.commitTransaction();
     }catch(err){
         const error = new httpError('Error! Could not delete place.', 500);
