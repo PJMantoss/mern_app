@@ -66,6 +66,7 @@ const signup = async (req, res, next) => {
         hashedPassword = await bcrypt.hash(password, 12)  //12 - salt/number of salting rounds
     }catch(err){
         const error = new httpError('Could not create user, please try again', 500);
+        return next(error);
     }
 
     // const createdUser = {
