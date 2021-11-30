@@ -60,6 +60,9 @@ const signup = async (req, res, next) => {
         return next(error);
     }
 
+    let hashedPassword;
+    bcrypt.hash(password, 12)  //12 - number of salted rounds
+
     // const createdUser = {
     //     id: uuidv4(),
     //     name,
