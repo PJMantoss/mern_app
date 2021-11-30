@@ -2,6 +2,8 @@ const httpError = require('../models/http-error');
 
 const { validationResult } = require('express-validator');
 
+const bcrypt = require('bcryptjs');
+
 //const {v4: uuidv4} = require('uuid');
 
 const User = require('../models/user');
