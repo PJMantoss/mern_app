@@ -115,6 +115,9 @@ const login = async (req, res, next) => {
         return next(error);
     }
 
+    let isValidPassword = false;
+    isValidPassword = await bcrypt.compare(password, existingUser.password)
+
     // const identifiedUser = DUMMY_USERS.find(u => u.email === email);
 
     // if(!identifiedUser || identifiedUser.password !== password){
