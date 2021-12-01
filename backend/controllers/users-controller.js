@@ -119,7 +119,13 @@ const login = async (req, res, next) => {
     try{
         isValidPassword = await bcrypt.compare(password, existingUser.password)
     }catch(err){
-        const error = new httpError('Could not log in. Please Check credentials and Try again.', 500)
+        const error = new httpError('Could not log you in. Please Check credentials and Try again.', 500);
+        return next(error);
+    }
+
+    if(!isValidPassword){
+        const error = new httpError('Invalid credentials, could not login', 401);
+        return next(error);
     }
 
     // const identifiedUser = DUMMY_USERS.find(u => u.email === email);
