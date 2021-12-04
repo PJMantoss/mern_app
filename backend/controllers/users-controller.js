@@ -96,7 +96,22 @@ const signup = async (req, res, next) => {
         return next(error);
     }
 
-    res.status(201).json({ user: createdUser.toObject({ getters: true }) })
+    let token;
+    try{
+        token = jwt.sign(
+            { 
+            userId: createdUser.id,
+            email: createdUser.email
+         },
+         'supersecret_dont_share',
+         { expiresIn: '1h' }
+         )
+    }catch(err){
+        const error = new httpError("Sign Up failed, Please try again.", 500)
+        return next(error);
+    }
+
+    res.status(201).json({ userId: createdUser.id, email: createdUser.email, token: token })
 };
 
 const login = async (req, res, next) => {
@@ -136,10 +151,30 @@ const login = async (req, res, next) => {
     //     throw new httpError('Wrong Credentials: Could not find user.', 401);
     // }
 
-    res.json({ 
-        message: "User Logged In",
-        user: existingUser.toObject({ getters: true }) 
-    })
+    let token;
+    try{
+        token = jwt.login(
+            { 
+            userId: existingUser.id,
+            email: existingUser.email
+         },
+         'supersecret_dont_share',
+         { expiresIn: '1h' }
+         )
+    }catch(err){
+        const error = new httpError('Invalid credentials, could not login', 401);
+        return next(error);
+    }
+
+    res.json(
+        { 
+            message: "User Logged In", 
+            userId: existingUser.id, 
+            email: existingUser.email, 
+            token: token 
+        }
+        )
+
 };
 
 exports.getUsers = getUsers;
