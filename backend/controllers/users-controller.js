@@ -153,7 +153,7 @@ const login = async (req, res, next) => {
 
     let token;
     try{
-        token = jwt.login(
+        token = jwt.sign(
             { 
             userId: existingUser.id,
             email: existingUser.email
@@ -162,13 +162,12 @@ const login = async (req, res, next) => {
          { expiresIn: '1h' }
          )
     }catch(err){
-        const error = new httpError('Invalid credentials, could not login', 401);
+        const error = new httpError("Login failed, Please try again.", 500);
         return next(error);
     }
 
     res.json(
-        { 
-            message: "User Logged In", 
+        {
             userId: existingUser.id, 
             email: existingUser.email, 
             token: token 
