@@ -167,7 +167,7 @@ const updatePlace = async (req, res, next) => {
         return next(error);
     }
 
-    if(place.creator.toString !== req.userData.userId){
+    if(place.creator.toString() !== req.userData.userId){
         const error = new httpError('You are not allowed to edit this place.', 401);
         return next(error);
     }
@@ -206,6 +206,14 @@ const deletePlace = async (req, res, next) => {
     // }
 
     // DUMMY_PLACES = DUMMY_PLACES.filter(p => p.id !== placeId);
+
+    if(place.creator.id !== req.userData.userId){
+        const error = new httpError('You are not allowed to delete this place.', 401);
+        return next(error);
+    }
+
+    //401 - Unauthorize Authentication Action
+    //403 - Invalid Credentials
 
     if(!place){
         const error = new httpError('Could not find a place for this id.', 404);
