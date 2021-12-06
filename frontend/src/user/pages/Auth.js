@@ -77,7 +77,7 @@ const Auth = () => {
                 }
               ); //HTTP Request to the backend
 
-              auth.login(responseData.user.id);
+              auth.login(responseData.userId);
 
               }catch(err){};
              
@@ -103,7 +103,7 @@ const Auth = () => {
                 // }
               ); //HTTP Request to the backend
                 
-                auth.login(responseData.user.id);
+                auth.login(responseData.userId);
 
             }catch(err){};
         }
