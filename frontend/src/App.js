@@ -25,6 +25,7 @@ function App() {
   const logout = useCallback(() => {
     setToken(null);
     setUserId(null);
+    localStorage.removeItem('userData');
   }, []);
 
   useEffect(() => {
@@ -32,7 +33,7 @@ function App() {
     if(storedData && storedData.token){
       login(storedData.userId, storedData.token);
     }
-  }, [login])
+  }, [login]);
 
   let routes;
 //If user is Logged in, show the following routes/components
