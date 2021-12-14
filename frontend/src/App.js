@@ -13,13 +13,6 @@ function App() {
   const [token, setToken] = useState(false);
   const [userId, setUserId] = useState(false);
 
-  useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem('userData'));
-    if(storedData && storedData.token){
-      login();
-    }
-  }, [])
-
   const login = useCallback((uid, token) => {
     setToken(token);
     localStorage.setItem(
@@ -33,6 +26,13 @@ function App() {
     setToken(null);
     setUserId(null);
   }, []);
+
+  useEffect(() => {
+    const storedData = JSON.parse(localStorage.getItem('userData'));
+    if(storedData && storedData.token){
+      login(storedData.userId, storedData.token);
+    }
+  }, [login])
 
   let routes;
 //If user is Logged in, show the following routes/components
