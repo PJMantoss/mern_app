@@ -33,13 +33,17 @@ function App() {
 
   const logout = useCallback(() => {
     setToken(null);
+    setTokenExpirationDate(null);
     setUserId(null);
     localStorage.removeItem('userData');
   }, []);
 
   useEffect(() => {
-    if(token){
-      setTimeout()
+    if(token && tokenExpirationDate){
+      const remainingTime = tokenExpirationDate.getTime() - new Date().getTime();
+      logoutTimer = setTimeout(logout, remainingTime);
+    } else {
+      clearTimeout(logoutTimer);
     }
   },[token, logout, tokenExpirationDate])
 
