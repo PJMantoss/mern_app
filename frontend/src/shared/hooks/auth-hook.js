@@ -47,4 +47,6 @@ export const useAuth = () => {
           login(storedData.userId, storedData.token, new Date(storedData.expiration));
         }
       }, [login]);
+
+      return { token, login, logout };
 }
