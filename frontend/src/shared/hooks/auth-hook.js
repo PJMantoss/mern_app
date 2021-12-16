@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+let logoutTimer;
+
 export const useAuth = () => {
     //Login state
     const [token, setToken] = useState(false);
