@@ -11,10 +11,6 @@ import { AuthContext } from './shared/context/auth-context';
 let logoutTimer;
 
 function App() {
-  //Login state
-  const [token, setToken] = useState(false);
-  const [tokenExpirationDate, setTokenExpirationDate] = useState();
-  const [userId, setUserId] = useState(false);
 
   const login = useCallback((uid, token, expirationDate) => {
     setToken(token);
