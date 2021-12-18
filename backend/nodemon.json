@@ -2,6 +2,7 @@
     "env": {
         "DB_USER" : "mantoss",
         "DB_PASSWORD" : "superstar",
-        "DB_NAME" : "mern"
+        "DB_NAME" : "mern",
+        "GOOGLE_API_KEY": ""
     }
 }
