@@ -1,0 +1,7 @@
+{
+    "env": {
+        "DB_USER" : "mantoss",
+        "DB_PASSWORD" : "superstar",
+        "DB_NAME" : "mern"
+    }
+}
