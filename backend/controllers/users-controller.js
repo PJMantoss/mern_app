@@ -103,7 +103,7 @@ const signup = async (req, res, next) => {
             userId: createdUser.id,
             email: createdUser.email
          },
-         'supersecret_dont_share',
+         'supersecret_dont_share', // Private Key
          { expiresIn: '1h' }
          )
     }catch(err){

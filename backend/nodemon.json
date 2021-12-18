@@ -3,6 +3,7 @@
         "DB_USER" : "mantoss",
         "DB_PASSWORD" : "superstar",
         "DB_NAME" : "mern",
-        "GOOGLE_API_KEY": ""
+        "GOOGLE_API_KEY": "",
+        "JWT_KEY": "supersecret_dont_share"
     }
 }
