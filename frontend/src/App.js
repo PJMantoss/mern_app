@@ -9,7 +9,7 @@ import Auth from './user/pages/Auth';
 import { AuthContext } from './shared/context/auth-context';
 import { useAuth } from './shared/hooks/auth-hook';
 
-const Users = lazy(() => import())
+const Users = lazy(() => import('./user/pages/Users'))
 
 function App() {
 
