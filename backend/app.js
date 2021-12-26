@@ -59,7 +59,7 @@ app.use((error, req, res, next) => {
 mongoose
     .connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.kxgzl.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`)
     .then(() => {
-        app.listen(5000); //If connection was sucessful start backend server
+        app.listen(process.env.PORT || 5000); //If connection was sucessful start backend server
     })
     .catch(err => {  //If it was not, catch the error.
         console.log(err);
