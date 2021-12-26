@@ -1,7 +1,7 @@
 {
     "env": {
         "DB_USER" : "mantoss",
-        "DB_PASSWORD" : "superstar",
+        "DB_PASSWORD" : "superstars",
         "DB_NAME" : "mern",
         "GOOGLE_API_KEY": "AIzaSyDnRe5IemyHDlP3QqycDOW8cNSqaiDpjdQ",
         "JWT_KEY": "supersecret_dont_share"
