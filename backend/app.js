@@ -33,7 +33,7 @@ app.use('/api/places', placesRoutes);
 
 app.use('/api/users', usersRoutes);
 
-app.use('/uploads/images', express.static(path.join('uploads','images')));
+app.use(express.static(path.join('public','images')));
 
 //Middleware that handles unknown requests
 // app.use((req, res, next) => {
