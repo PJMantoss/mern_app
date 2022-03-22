@@ -6,6 +6,8 @@ An app where users can share can share places (with images and location) with ot
 ## Tools Used
 - MongoDB, Express, Reactjs, Node (MERN)
 - CSS
+- Firebase
+- Heroku
 
 ## Dependencies
 - axios
