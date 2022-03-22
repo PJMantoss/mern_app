@@ -1,7 +1,7 @@
 # The Places App built with MERN
 
 ## App Description
-An app where users can share places (with images and location) with other users. It's all CRUD, has multiple data models and Authentication and Authorization is required.
+An app where users can share places (with images and location) with other users. It's all CRUD, has multiple data models and Authentication & Authorization is required.
 
 ## Tools Used
 - MongoDB, Express, Reactjs, Node (MERN)
