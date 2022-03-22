@@ -16,6 +16,9 @@ An app where users can share can share places (with images and location) with ot
 - multer
 - uuid
 - nodemon
+- react-router-dom
+- react-scripts
+- react-transition-group
 - bcryptjs
 - jsonwebtoken
 
